@@ -3,7 +3,7 @@ package com.example.foodhunt
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-
+//
 class DBHelper(context: Context) : SQLiteOpenHelper(context,"Users.db",null,1)  {
     companion object{
         val TABLE_NAME="users_table"
