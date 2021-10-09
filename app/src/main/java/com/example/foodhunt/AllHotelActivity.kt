@@ -48,10 +48,13 @@ class AllHotelActivity : AppCompatActivity() {
                 }
                 Log.d("AllHotelActivity","hotelList : $hotelList")
                for(j in 0..(hotelList.size - 1)){
-                   val hotel1 = snapshot.children.elementAt(j.toInt())
+                   val itemnames = snapshot.children.elementAt(j).child("Items")
+                   Log.d("AllHotelActivity","items : $itemnames")
+                   itemList.add(itemnames.child("Items").value.toString())
+
                    val hotname = hotelList[j]
                    Log.d("AllHotelActivity","hotname : $hotname")
-                   itemList.add(hotel1.child("hotelName/$hotname/Items").value.toString())
+
                }
                 Log.d("AllHotelActivity","hotelList : $itemList")
             }
