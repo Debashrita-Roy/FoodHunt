@@ -3,6 +3,7 @@ package com.example.foodhunt
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -41,7 +42,10 @@ class DisplayActivity : AppCompatActivity() {
                 val mapfrag = MapsFragment()
                 supportFragmentManager.beginTransaction().add(R.id.parentL,mapfrag).commit()
             }
-            "All Hotels" -> allHotelDetails()
+            "All Hotels" -> {
+                val i = Intent(this, AllHotelActivity::class.java)
+                startActivity(i)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

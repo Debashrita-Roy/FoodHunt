@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/NANILJAD/AndroidStudioProjects/FoodHuntMain/app/src/main/res/layout/activity_all_hotel.xml" value="0.4" />
+        <entry key="..\:/Users/NANILJAD/AndroidStudioProjects/FoodHuntMain/app/src/main/res/layout/activity_hotel_firebase_db.xml" value="0.536" />
+        <entry key="..\:/Users/NANILJAD/AndroidStudioProjects/FoodHuntMain/app/src/main/res/layout/all_hotel_list.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/NANILJAD/AndroidStudioProjects/FoodHuntMain/app/src/main/res/layout/all_hotel_list_item.xml" value="0.536" />
+        <entry key="..\:/Users/NANILJAD/AndroidStudioProjects/FoodHuntMain/app/src/main/res/layout/fragment_add_item.xml" value="0.6" />
         <entry key="..\:/Users/NANILJAD/Downloads/FoodHunt/app/src/main/res/layout/activity_display.xml" value="0.72" />
         <entry key="..\:/Users/NANILJAD/Downloads/FoodHunt/app/src/main/res/layout/activity_hotel_firebase_db.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/NANILJAD/Downloads/FoodHunt/app/src/main/res/layout/fragment_maps.xml" value="0.25416666666666665" />

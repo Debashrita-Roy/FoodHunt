@@ -37,7 +37,8 @@ class SignInActivity : AppCompatActivity(){
 
         val userid=uidEditText.text.toString()
         val password=pwdEditText.text.toString()
-        addPredefinedHotels()
+        //addPredefinedHotels()
+        addCreateFirebase()
 
         when{
             userid.isEmpty()->uidEditText.setError("Please enter user id")
