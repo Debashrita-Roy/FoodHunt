@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -39,19 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         val confirmpassword = confirmpwdEditText.text.toString()
 
         if (userid.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-            /*val use = Users(userid, email, password)
 
-            //add to database
-
-            val wrapper = DBWrapper(this)
-            val rowid = wrapper.addUser(use)
-            if (rowid.toInt() != -1) {
-                //Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
-            } else
-                Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()
-        } else
-            Toast.makeText(this, "pls provide all info", Toast.LENGTH_SHORT).show()
-*/
             when {
                 userid.isEmpty() -> uidEditText.setError("Please enter user id")
                 email.isEmpty() -> emailEditText.setError("Please enter email id")
@@ -65,18 +54,17 @@ class RegisterActivity : AppCompatActivity() {
                     val use = Users(userid, email, password)
 
                     //add to database
-
                     val wrapper = DBWrapper(this)
                     val rowid = wrapper.addUser(use)
                     if (rowid.toInt() != -1) {
-                        //Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+                        val i = Intent(this, SignInActivity::class.java)
+                        startActivity(i)
                     } else
                         Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()
 
-                    val i = Intent(this, SignInActivity::class.java)
-                    startActivity(i)
                 }
             }
         }
     }
 }
+
