@@ -78,41 +78,37 @@ fun addCreateFirebase(){
 }
 
 
-fun allHotelDetails() {
-    val hotRef = db.getReference("All Hotels")
-        .child("Hotel Name-")
+//fun allHotelDetails() {
+//    val hotRef = db.getReference("Hotels")
+//        .child("Hotel Name")
+//
+//    hotRef.addValueEventListener(object : ValueEventListener {
+//
+//        override fun onDataChange(snapshot: DataSnapshot) {
+//            Log.d("HotelFirebaseDB","Got Hotel : $snapshot")
+//        }
+//
+//        override fun onCancelled(error: DatabaseError) {
+//            TODO("Not yet implemented")
+//        }
+//
+//    })
+//}
 
-    hotRef.addValueEventListener(object : ValueEventListener {
-
-        override fun onDataChange(snapshot: DataSnapshot) {
-            Log.d("HotelFirebaseDB","Got Hotel : $snapshot")
-        }
-
-        override fun onCancelled(error: DatabaseError) {
-            TODO("Not yet implemented")
-        }
-
-    })
-}
-
-fun getHotelDetails(name : String) {
-
-    val hotRef = db.getReference("All Hotels")
-        .child("Hotel Name-")
-        .child(name)
-
-    hotRef.addValueEventListener(object : ValueEventListener {
-
-        override fun onDataChange(snapshot: DataSnapshot) {
-            val namee = snapshot.child("hotelName").getValue()
-//            val hotel = snapshot.getValue(Hotel::class.java)
-            Log.d("HotelFirebaseDB", "Got Hotel : $namee")
-        }
-
-        override fun onCancelled(error: DatabaseError) {
-            TODO("Not yet implemented")
-        }
-
-    })
-
-}
+//fun getHotelDetails() {
+//
+//    val hotRef = db.getReference("Hotels")
+//        .child("Hotel Name")
+//
+//    hotRef.addValueEventListener(object : ValueEventListener {
+//        override fun onDataChange(snapshot: DataSnapshot) {
+//            Log.d("DisplayActivity", "\nGot Hotel : $snapshot")
+//            val hotel1 = snapshot.children.elementAt(3)
+//           // val a = hotel1.children.elementAt(4).value.toString()
+//            Log.d("DisplayActivity","\nHotels are  : $hotel1")
+//        }
+//        override fun onCancelled(error: DatabaseError) {
+//            TODO("Not yet implemented")
+//        }
+//    })
+//}

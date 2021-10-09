@@ -20,10 +20,6 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
     lateinit var addHotelButton: Button
     lateinit var image: ImageView
 
-    companion object{
-        lateinit var b : Bundle
-        lateinit var b1 : Bundle
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hotel_firebase_db)
@@ -33,52 +29,48 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
         descEditText = findViewById(R.id.descE)
 
 
-        addHotelButton = findViewById(R.id.regB)
+        addHotelButton = findViewById(R.id.addHotelB)
 
 
         db = FirebaseDatabase.getInstance()
-        auth = FirebaseAuth.getInstance()
 
     //    addPredefinedHotels()
         addCreateFirebase()
     }
 
 
-    private fun addHotel() {
+    fun addHotel(view: View) {
 
         val name = nameEditText.text.toString()
         val desc = descEditText.text.toString()
+        if (name.isNotEmpty() && desc.isNotEmpty()) {
+            val hotOwner = Hotel(101, name, desc)
+            val hotRef = db.getReference("Hotels/Hotel Name")
+            hotRef.child(hotOwner.hotelName.toString()).setValue(hotOwner)
 
-        val hotOwner = Hotel(101, name, desc)
-        val hotRef = db.getReference("Hotels/Hotel Name")
-        hotRef.child(hotOwner.hotelName.toString()).setValue(hotOwner)
+            val b = Bundle()
+            b.putString("Hotelname",hotOwner.hotelName)
 
-    }
-
-    fun addClick(view: View) {
-        addHotel()
-
-        nameEditText.setText("")
-        descEditText.setText("")
-
-//        val i = Intent(this, SignInActivity::class.java)
-//        startActivity(i)
+            val i = Intent(this,AddItemActivity::class.java)
+            i.putExtras(b)
+            startActivity(i)
+        }
     }
 
     fun getMaps(view: View) {
 
          val i = Intent(this,DisplayActivity::class.java)
-         i.putExtras(b)
+       //  i.putExtras(b)
          startActivity(i)
 
     }
 
-    override fun onClick(v: View?) {
+
+    fun submitClick(view: View) {
 
     }
-
-
-    fun submitClick(view: View) {}
+    override fun onClick(v: View?) {
+    }
 
 }
 

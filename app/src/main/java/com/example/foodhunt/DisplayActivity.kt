@@ -11,21 +11,9 @@ import android.widget.TextView
 
 class DisplayActivity : AppCompatActivity() {
 
-//    lateinit var mapButton: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
-
-//        mapButton = findViewById(R.id.showMap)
-
-
-        val i = intent.extras
-
-//        val mapfrag = MapsFragment()
-//        supportFragmentManager.beginTransaction().add(R.id.parentL,mapfrag).commit()
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -37,7 +25,9 @@ class DisplayActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
-            "Get Hotel Details" -> getHotelDetails("Customize")
+            "Get Hotel Details" -> {
+
+            }
             "Search Hotel on Maps" -> {
                 val mapfrag = MapsFragment()
                 supportFragmentManager.beginTransaction().add(R.id.parentL,mapfrag).commit()

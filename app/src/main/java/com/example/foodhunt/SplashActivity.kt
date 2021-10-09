@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Timer().schedule(3000) {
-            val i = Intent(this@SplashActivity, MainActivity::class.java)
+            val i = Intent(this@SplashActivity, MainActivity ::class.java)
             startActivity(i)
             finish()
         }

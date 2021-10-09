@@ -19,12 +19,12 @@
         android:id="@+id/hotNameE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:ems="10"
         android:hint="HotelName"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
@@ -33,62 +33,30 @@
         android:id="@+id/descE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="desc"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hotNameE"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/regB"
+        android:id="@+id/addHotelB"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="32dp"
         android:backgroundTintMode="multiply"
-        android:onClick="addClick"
+        android:onClick="addHotel"
         android:shadowColor="#E4DDDD"
         android:text="Add Hotel"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descE" />
-
-    <Button
-        android:id="@+id/submitB"
-        android:layout_width="252dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTintMode="multiply"
-        android:onClick="submitClick"
-        android:shadowColor="#E4DDDD"
-        android:text="submit"
-        app:cornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerL" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/containerL"
-        android:name="com.example.foodhunt.AddItemFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.701"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regB" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

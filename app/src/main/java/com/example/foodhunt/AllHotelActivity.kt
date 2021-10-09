@@ -20,6 +20,7 @@ class AllHotelActivity : AppCompatActivity() {
     lateinit var hotelAdapter: HotelAdapter
 
     var hotelList = mutableListOf<String>()
+    var itemList = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,29 +30,36 @@ class AllHotelActivity : AppCompatActivity() {
         rView!!.setHasFixedSize(true)
         rView!!.layoutManager = LinearLayoutManager(this)
 
-        hotelList = ArrayList<String>()
 
         db = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        val hotRef = db.getReference("All Hotels")
-            .child("Hotel Name-")
+        val hotRef = db.getReference("Hotels")
+            .child("Hotel Name")
 
-        hotRef.addListenerForSingleValueEvent(object : ValueEventListener {
-
+        hotRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val namee = snapshot.child("hotelName").getValue()
-            //    val l = snapshot.getValue(Hotel::class.java)
-                hotelList.add(namee.toString())
-//            val hotel = snapshot.getValue(Hotel::class.java)
-                Log.d("HotelFirebaseDB", "Got Hotel : $namee")
-                Log.d("AllHotelActivity","$hotelList")
+                Log.d("AllHotelActivity", "\nGot Hotel : $snapshot")
+                val hotelCount = snapshot.childrenCount
+                for (i in 0..hotelCount - 1) {
+                    val hotel1 = snapshot.children.elementAt(i.toInt())
+                    hotelList.add(hotel1.child("hotelName").value.toString())
+                    Log.d("AllHotelActivity", "\nHotels are  : $hotel1\n")
+                }
+                Log.d("AllHotelActivity","hotelList : $hotelList")
+               for(j in 0..(hotelList.size - 1)){
+                   val hotel1 = snapshot.children.elementAt(j.toInt())
+                   val hotname = hotelList[j]
+                   Log.d("AllHotelActivity","hotname : $hotname")
+                   itemList.add(hotel1.child("hotelName/$hotname/Items").value.toString())
+               }
+                Log.d("AllHotelActivity","hotelList : $itemList")
             }
+
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
 
         setUpRecyclerView()
