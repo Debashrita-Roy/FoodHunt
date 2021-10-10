@@ -2,41 +2,41 @@ package com.example.foodhunt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.IOException
-import java.nio.charset.Charset
-import kotlin.collections.ArrayList
+import com.google.firebase.database.ValueEventListener
+import java.util.ArrayList
 
 class AllHotelActivity : AppCompatActivity() {
 
     lateinit var rView : RecyclerView
     lateinit var hotelAdapter: HotelAdapter
 
-//    var hotelList = ArrayList<String>()
-//    var itemList = mutableListOf<String>()
+    var hotelList = mutableListOf<Hotel>()
+ //   var itemList = mutableListOf<String>()
 
-    var hotelName: ArrayList<String> = ArrayList()
-    var items: ArrayList<String> = ArrayList()
-
+    lateinit var db : FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_hotel)
 
         rView = findViewById(R.id.hotelRV)
-        rView!!.setHasFixedSize(true)
-        rView!!.layoutManager = LinearLayoutManager(applicationContext)
+        rView.setHasFixedSize(true)
+        rView.layoutManager = LinearLayoutManager(this)
 
+        hotelList = arrayListOf<Hotel>()
 
-        db = FirebaseDatabase.getInstance()
-        auth = FirebaseAuth.getInstance()
-
+        getUsesData()
+//        db = FirebaseDatabase.getInstance()
+//
 //        val hotRef = db.getReference("Hotels")
 //            .child("Hotel Name")
 //
@@ -51,13 +51,10 @@ class AllHotelActivity : AppCompatActivity() {
 //                }
 //                Log.d("AllHotelActivity","hotelList : $hotelList")
 //               for(j in 0..(hotelList.size - 1)){
-//                   val itemnames = snapshot.children.elementAt(j).child("Items")
-//                   Log.d("AllHotelActivity","items : $itemnames")
-//                   itemList.add(itemnames.child("Items").value.toString())
-//
+//                   val hotel1 = snapshot.children.elementAt(j.toInt())
 //                   val hotname = hotelList[j]
 //                   Log.d("AllHotelActivity","hotname : $hotname")
-//
+//                   itemList.add(hotel1.child("hotelName/$hotname/Items").value.toString())
 //               }
 //                Log.d("AllHotelActivity","hotelList : $itemList")
 //            }
@@ -67,46 +64,33 @@ class AllHotelActivity : AppCompatActivity() {
 //                TODO("Not yet implemented")
 //            }
 //        })
-        //       setUpRecyclerView()
 
-        try {
-            val obj = JSONObject(loadJSONFromAsset())
-            val hotelArray = obj.getJSONObject("Hotels/Hotel Name")
-            for (i in 0 until hotelArray.length()) {
-                val hotelDetail = hotelArray.getJSONObject(i.toString())
+//        setUpRecyclerView()
 
-                hotelName.add(hotelDetail.getString("hotelName"))
-                val itemDetails = hotelDetail.getJSONObject("${hotelName}/Items")
-                items.add(itemDetails.getString("itemName"))
+    }
+
+    private fun getUsesData() {
+        db = FirebaseDatabase.getInstance()
+        val hotRef = db.getReference("Hotels").child("Hotel Name")
+
+        hotRef.addValueEventListener( object : ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    for (usersnapshot in snapshot.children){
+                        val hot = usersnapshot.getValue(Hotel::class.java)
+                        hotelList.add(hot!!)
+                    }
+                    rView.adapter = HotelAdapter(hotelList)
+                }
             }
-        }
-        catch (e: JSONException) {
-            e.printStackTrace()
-        }
-        val hotelAdapter = HotelAdapter(this@AllHotelActivity,hotelName,items)
-        rView.adapter = hotelAdapter
-//        rView.layoutManager = GridLayoutManager(this,2)
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
-
-    private fun loadJSONFromAsset(): String {
-        val json: String?
-        try {
-            val inputStream = assets.open("foodHuntData.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            val charset: Charset = Charsets.UTF_8
-            inputStream.read(buffer)
-            inputStream.close()
-            json = String(buffer, charset)
-        }
-        catch (ex: IOException) {
-            ex.printStackTrace()
-            return ""
-        }
-        return json
-    }
-
-
 
 //    fun setUpRecyclerView() {
 //        hotelAdapter = HotelAdapter(hotelList)
@@ -117,4 +101,5 @@ class AllHotelActivity : AppCompatActivity() {
     private fun onHotelSelected(selectedHotel : Hotel){
         Toast.makeText(this, "$selectedHotel", Toast.LENGTH_SHORT).show()
     }
+
 }

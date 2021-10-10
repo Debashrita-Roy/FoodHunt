@@ -11,10 +11,10 @@ package com.example.foodhunt
 //)
 
 data class Hotel(
-    val registerId: Int,
+    val registerId: Int = 0,
     val hotelName: String? = null,
 //    val image : Int,
-    val description : String
+    val description : String? = null
 )
 
 // for items
