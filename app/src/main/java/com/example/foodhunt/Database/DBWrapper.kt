@@ -1,9 +1,10 @@
-package com.example.foodhunt
+package com.example.foodhunt.Database
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import com.example.foodhunt.Users
 
 class DBWrapper (val context: Context){
 
@@ -24,8 +25,9 @@ class DBWrapper (val context: Context){
 
     fun getUser(): Cursor {
         //select query
-        val clms= arrayOf(DBHelper.CLM_USER_ID,DBHelper.CLM_USER_EMAIL,DBHelper.CLM_USER_PWD)
-        return db.query(DBHelper.TABLE_NAME,clms,null,
+        val clms= arrayOf(DBHelper.CLM_USER_ID, DBHelper.CLM_USER_EMAIL, DBHelper.CLM_USER_PWD)
+        return db.query(
+            DBHelper.TABLE_NAME,clms,null,
             null,null,null,null)
 
     }

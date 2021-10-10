@@ -14,14 +14,14 @@ data class Hotel(
     val registerId: Int = 0,
     val hotelName: String? = null,
 //    val image : Int,
-    val description : String? = null
+    val description : String? = null,
 )
 
 // for items
 data class Item(
-    val itemName : String,
-    val price : Int,
-    val itemImage : Int
+    val itemName : String? = null,
+    val price : Int = 0,
+    val itemImage : Int = 0
 )
 
 

@@ -8,7 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import kotlin.math.sign
+import com.example.foodhunt.Database.DBHelper
+import com.example.foodhunt.Database.DBWrapper
 
 val userList= mutableListOf<Users>()
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun populateList() {
-        val wrapper=DBWrapper(this)
+        val wrapper= DBWrapper(this)
         val resultC=wrapper.getUser()
         userList.clear()
 

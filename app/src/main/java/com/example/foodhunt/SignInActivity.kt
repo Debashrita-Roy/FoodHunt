@@ -7,7 +7,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.os.Build.VERSION_CODES.O
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
@@ -15,7 +14,8 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.foodhunt.R
+import com.example.foodhunt.Database.DBHelper
+import com.example.foodhunt.Database.DBWrapper
 
 class SignInActivity : AppCompatActivity() {
 
@@ -86,7 +86,7 @@ class SignInActivity : AppCompatActivity() {
                             Log.d("SignInActivity", "$idString")
                             Log.d("SignInActivity", "$pwString")
                             Toast.makeText(this,"Signed in with \nUserid: $userid ", Toast.LENGTH_LONG).show()
-                            val i = Intent(this, DisplayActivity::class.java)
+                            val i = Intent(this, AllHotelActivity::class.java)
                             startActivity(i)
                             break
                         }

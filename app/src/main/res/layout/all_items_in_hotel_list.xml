@@ -6,34 +6,34 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="169dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="76dp"
+        android:id="@+id/imageView10"
+        android:layout_width="195dp"
+        android:layout_height="74dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="75dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dwl" />
+        app:srcCompat="@drawable/bowl" />
 
     <TextView
-        android:id="@+id/hotelNameT"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Hotel name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        android:text="item"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@+id/textView11"
+        tools:layout_editor_absoluteX="78dp" />
 
     <TextView
-        android:id="@+id/hotdescT"
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="75dp"
-        android:text="Description"
+        android:layout_marginTop="16dp"
+        android:text="price"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/hotelNameT" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 </androidx.constraintlayout.widget.ConstraintLayout>

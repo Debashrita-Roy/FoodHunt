@@ -3,6 +3,8 @@ package com.example.foodhunt
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +22,7 @@ class AllHotelActivity : AppCompatActivity() {
     lateinit var hotelAdapter: HotelAdapter
 
     var hotelList = mutableListOf<Hotel>()
- //   var itemList = mutableListOf<String>()
+    var itemList = mutableListOf<Item>()
 
     lateinit var db : FirebaseDatabase
 
@@ -33,43 +35,27 @@ class AllHotelActivity : AppCompatActivity() {
         rView.layoutManager = LinearLayoutManager(this)
 
         hotelList = arrayListOf<Hotel>()
+        itemList = arrayListOf<Item>()
 
-        getUsesData()
-//        db = FirebaseDatabase.getInstance()
-//
-//        val hotRef = db.getReference("Hotels")
-//            .child("Hotel Name")
-//
-//        hotRef.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                Log.d("AllHotelActivity", "\nGot Hotel : $snapshot")
-//                val hotelCount = snapshot.childrenCount
-//                for (i in 0..hotelCount - 1) {
-//                    val hotel1 = snapshot.children.elementAt(i.toInt())
-//                    hotelList.add(hotel1.child("hotelName").value.toString())
-//                    Log.d("AllHotelActivity", "\nHotels are  : $hotel1\n")
-//                }
-//                Log.d("AllHotelActivity","hotelList : $hotelList")
-//               for(j in 0..(hotelList.size - 1)){
-//                   val hotel1 = snapshot.children.elementAt(j.toInt())
-//                   val hotname = hotelList[j]
-//                   Log.d("AllHotelActivity","hotname : $hotname")
-//                   itemList.add(hotel1.child("hotelName/$hotname/Items").value.toString())
-//               }
-//                Log.d("AllHotelActivity","hotelList : $itemList")
-//            }
-//
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-
-//        setUpRecyclerView()
-
+        getHotelData()
     }
 
-    private fun getUsesData() {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu?.add(" Show on Map ")
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.title){
+            " Show on Map " -> {
+                val mapfrag = MapsFragment()
+                supportFragmentManager.beginTransaction().add(R.id.containerL,mapfrag).commit()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun getHotelData() {
         db = FirebaseDatabase.getInstance()
         val hotRef = db.getReference("Hotels").child("Hotel Name")
 
@@ -77,11 +63,33 @@ class AllHotelActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
-                    for (usersnapshot in snapshot.children){
-                        val hot = usersnapshot.getValue(Hotel::class.java)
+                    for (i in snapshot.children){
+                        val hot = i.getValue(Hotel::class.java)
                         hotelList.add(hot!!)
+                        getItemsData(hot)
                     }
                     rView.adapter = HotelAdapter(hotelList)
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+    }
+
+    private fun getItemsData( hot : Hotel){
+        val hotDescRef = db.getReference("Hotels").child("Hotel Name").child("${hot.hotelName}").child("Items")
+        hotDescRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    for (i in snapshot.children){
+                        val items = i.getValue(Item::class.java)
+                        itemList.add(items!!)
+                    }
+                    Log.d("AllHotelActivity", "$itemList")
+//                    rView.adapter = ItemAdapter(itemList)
                 }
             }
 
@@ -92,14 +100,12 @@ class AllHotelActivity : AppCompatActivity() {
         })
     }
 
+
 //    fun setUpRecyclerView() {
 //        hotelAdapter = HotelAdapter(hotelList)
 //        rView.adapter = hotelAdapter
 //        rView.layoutManager = GridLayoutManager(this,2)
 //    }
 
-    private fun onHotelSelected(selectedHotel : Hotel){
-        Toast.makeText(this, "$selectedHotel", Toast.LENGTH_SHORT).show()
-    }
 
 }

@@ -34,12 +34,11 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
 
         db = FirebaseDatabase.getInstance()
 
-    //    addPredefinedHotels()
-        addCreateFirebase()
+        addCreateFirebase()  // predefined hotels have been added
     }
 
 
-    fun addHotel(view: View) {
+    fun addHotel(view: View) {  // adding hotels dynamically  // onClick for add hotel button
 
         val name = nameEditText.text.toString()
         val desc = descEditText.text.toString()
@@ -57,18 +56,10 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun getMaps(view: View) {
-
-         val i = Intent(this,DisplayActivity::class.java)
-       //  i.putExtras(b)
-         startActivity(i)
-
-    }
-
-
     fun submitClick(view: View) {
 
     }
+
     override fun onClick(v: View?) {
     }
 
