@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+
 
 class HotelAdapter(private var hotName: MutableList<Hotel>)
     : RecyclerView.Adapter<HotelAdapter.HotelHolder>() {
