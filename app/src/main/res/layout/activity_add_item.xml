@@ -6,14 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".AddItemActivity">
 
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="581dp"
+        android:layout_height="597dp"
+        android:alpha="0.7"
+        android:rotation="-90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pexels_ella_olsson_1640774"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         android:id="@+id/itemNameE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="148dp"
         android:ems="10"
-        android:hint="item name"
+        android:hint="Item name"
         android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,20 +38,22 @@
         android:id="@+id/itemPriceE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="price"
+        android:hint="Price"
         android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameE" />
 
     <Button
-        android:id="@+id/itemB"
-        android:layout_width="252dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/addItemB"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:backgroundTintMode="multiply"
         android:onClick="addItem"
         android:shadowColor="#E4DDDD"
@@ -47,19 +64,31 @@
         app:layout_constraintTop_toBottomOf="@+id/itemPriceE" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="show my hotel"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="452dp" />
+        android:id="@+id/showHotelB"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTintMode="multiply"
+        android:onClick="showHotel"
+        android:text="Show Hotel"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitItemB" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="submit and leave"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="370dp" />
+        android:id="@+id/submitItemB"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTintMode="multiply"
+        android:shadowColor="#E4DDDD"
+        android:text="Submit "
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addItemB" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

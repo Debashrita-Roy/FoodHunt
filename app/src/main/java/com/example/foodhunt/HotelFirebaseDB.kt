@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -53,6 +54,9 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
             val i = Intent(this,AddItemActivity::class.java)
             i.putExtras(b)
             startActivity(i)
+        }
+        else{
+            Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show()
         }
     }
 

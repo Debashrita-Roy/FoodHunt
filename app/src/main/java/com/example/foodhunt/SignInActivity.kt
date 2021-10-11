@@ -93,8 +93,12 @@ class SignInActivity : AppCompatActivity() {
                         else {
                             Toast.makeText(
                                 this,
-                                "Wrong Data!!!Check your ID and Password",
-                                Toast.LENGTH_SHORT
+                                """
+                                Please register if a first time user :)
+                                                 or
+                                Please Check your ID and Password 
+                                """.trimIndent(),
+                                Toast.LENGTH_LONG
                             ).show()
                         }
                     } while (resultC.moveToNext())

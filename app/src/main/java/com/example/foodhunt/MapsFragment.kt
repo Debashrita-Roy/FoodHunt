@@ -83,7 +83,5 @@ class MapsFragment : Fragment() {
     }
 }
 
-class Items(val item1 : String, val item2 : String) {
-}
 
 

@@ -13,7 +13,7 @@ package com.example.foodhunt
 data class Hotel(
     val registerId: Int = 0,
     val hotelName: String? = null,
-//    val image : Int,
+    //val image : Int,
     val description : String? = null,
 )
 
@@ -21,7 +21,8 @@ data class Hotel(
 data class Item(
     val itemName : String? = null,
     val price : Int = 0,
-    val itemImage : Int = 0
+    val itemImage : Int = 0,
+    var count : Int = 0
 )
 
 

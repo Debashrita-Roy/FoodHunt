@@ -7,24 +7,27 @@
     tools:context=".HotelFirebaseDB">
 
     <ImageView
-        android:id="@+id/showMap"
-        android:layout_width="50dp"
-        android:layout_height="58dp"
-        android:onClick="getMaps"
+        android:id="@+id/imageView20"
+        android:layout_width="446dp"
+        android:layout_height="654dp"
+        android:alpha="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/location" />
+        app:srcCompat="@drawable/pexels_valeria_boltneva_827528" />
 
     <EditText
         android:id="@+id/hotNameE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="180dp"
         android:ems="10"
         android:hint="HotelName"
         android:inputType="textPersonName"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
@@ -37,6 +40,7 @@
         android:ems="10"
         android:hint="desc"
         android:inputType="textPersonName"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
