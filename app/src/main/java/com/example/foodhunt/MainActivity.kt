@@ -86,13 +86,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val idx_id=resultC.getColumnIndex(DBHelper.CLM_USER_ID)
             val idx_email=resultC.getColumnIndex(DBHelper.CLM_USER_EMAIL)
             val idx_password=resultC.getColumnIndex(DBHelper.CLM_USER_PWD)
+            var idx_address=resultC.getColumnIndex(DBHelper.CLM_USER_ADDR)
 
             do{
                 val id=resultC.getString(idx_id)
                 val email=resultC.getString(idx_email)
                 val password=resultC.getString(idx_password)
+                var address=resultC.getString(idx_address)
 
-                val use=Users(id,email,password)
+                val use=Users(id,email,password,address)
                 userList.add(use)
             }
             while (resultC.moveToNext())

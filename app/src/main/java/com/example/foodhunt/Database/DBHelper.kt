@@ -10,10 +10,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,"Users.db",null,1)  
         val CLM_USER_ID="user_id"
         val CLM_USER_EMAIL="user_email"
         val CLM_USER_PWD="user_password"
+        val CLM_USER_ADDR="user_address"
 
     }
     val QUERY_CREATE_TABLE="create table $TABLE_NAME($CLM_USER_ID text,"+
-            "$CLM_USER_EMAIL text, $CLM_USER_PWD text)"
+            "$CLM_USER_EMAIL text, $CLM_USER_PWD text, $CLM_USER_ADDR text)"
 
 
     override fun onCreate(db: SQLiteDatabase?) {

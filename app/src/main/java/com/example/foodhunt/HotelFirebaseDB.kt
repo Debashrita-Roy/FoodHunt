@@ -1,6 +1,7 @@
 package com.example.foodhunt
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,10 +16,12 @@ import com.google.firebase.database.FirebaseDatabase
 class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
 
     lateinit var db: FirebaseDatabase
-    lateinit var auth: FirebaseAuth
     lateinit var nameEditText: EditText
     lateinit var descEditText: EditText
     lateinit var addHotelButton: Button
+    lateinit var addressEditText: EditText
+    lateinit var latEditText: EditText
+    lateinit var longEditText: EditText
     lateinit var image: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +31,11 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
 
         nameEditText = findViewById(R.id.hotNameE)
         descEditText = findViewById(R.id.descE)
-
+        addressEditText = findViewById(R.id.addrE)
+        latEditText = findViewById(R.id.latE)
+        longEditText = findViewById(R.id.longE)
 
         addHotelButton = findViewById(R.id.addHotelB)
-
 
         db = FirebaseDatabase.getInstance()
 
@@ -43,8 +47,11 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
 
         val name = nameEditText.text.toString()
         val desc = descEditText.text.toString()
+        val addr = addressEditText.text.toString()
+        val lat = latEditText.text.toString()
+        val long = longEditText.text.toString()
         if (name.isNotEmpty() && desc.isNotEmpty()) {
-            val hotOwner = Hotel(101, name, desc)
+            val hotOwner = Hotel(101, name, desc, addr, lat.toDouble(), long.toDouble())
             val hotRef = db.getReference("Hotels/Hotel Name")
             hotRef.child(hotOwner.hotelName.toString()).setValue(hotOwner)
 

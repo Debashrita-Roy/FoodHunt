@@ -2,6 +2,7 @@ package com.example.foodhunt
 
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -11,14 +12,13 @@ import com.google.firebase.database.ValueEventListener
 lateinit var db: FirebaseDatabase
 lateinit var auth: FirebaseAuth
 
-
 /***   Adding predefined Hotels in firebase database */
 fun addCreateFirebase(){
     db = FirebaseDatabase.getInstance()
     auth = FirebaseAuth.getInstance()
 
-    val hot1 = Hotel(101, "Zayka", "desc" )
-    val hot2 = Hotel(102, "Darbar", "desc" )
+    val hot1 = Hotel(101, "Zayka", "This is a comfortable and cozy place", "Mumbai", 19.2094, 73.0939 )
+    val hot2 = Hotel(102, "Darbar", "desc", "Dombivali",19.2180, 73.1221  )
 
     val hotRef = db.getReference("Hotels/Hotel Name")
     hotRef.child(hot1.hotelName.toString()).setValue(hot1)

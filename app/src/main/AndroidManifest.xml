@@ -22,6 +22,9 @@
             android:name=".AllItemActivity"
             android:exported="true" />
         <activity
+            android:name=".AllItemsActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddItemActivity"
             android:exported="true" />
         <activity

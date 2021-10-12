@@ -14,7 +14,6 @@
         android:rotationY="177"
         android:scaleType="fitEnd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg2" />
@@ -49,22 +48,22 @@
 
     <EditText
         android:id="@+id/userIdER"
-        android:layout_width="252dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="208dp"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="196dp"
         android:ems="10"
         android:hint="Create User Name"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/emailER"
-        android:layout_width="253dp"
-        android:layout_height="44dp"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Enter  Email"
@@ -77,8 +76,8 @@
 
     <EditText
         android:id="@+id/pwdER"
-        android:layout_width="250dp"
-        android:layout_height="44dp"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Create password"
@@ -90,8 +89,8 @@
 
     <EditText
         android:id="@+id/confirmpwdER"
-        android:layout_width="250dp"
-        android:layout_height="47dp"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Confirm password"
@@ -105,7 +104,7 @@
         android:id="@+id/regB"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="33dp"
         android:backgroundTintMode="multiply"
         android:onClick="registerClick"
         android:shadowColor="#E4DDDD"
@@ -114,7 +113,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmpwdER" />
+        app:layout_constraintTop_toBottomOf="@+id/addressER" />
 
     <ImageView
         android:id="@+id/backB"
@@ -125,5 +124,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
+
+    <EditText
+        android:id="@+id/addressER"
+        android:layout_width="255dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter Adress"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmpwdER" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

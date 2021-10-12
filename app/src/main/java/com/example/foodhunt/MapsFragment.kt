@@ -14,9 +14,15 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.ArrayList
 
 class MapsFragment : Fragment() {
+
+    var hotelList = mutableListOf<Hotel>()
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -28,46 +34,61 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        //============================================================================
-        val res1Loc =  LatLng(19.0205, 72.87)
-        val res1 = googleMap.addMarker(MarkerOptions().position(res1Loc).title("Zaika Restaurant"))
-        googleMap.setOnInfoWindowClickListener() {
-            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_LONG).show()
 
-        }
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(res1Loc))
-//===============================================================================================
-        val res2Loc = LatLng(19.220, 72.85)
-        val res2 = googleMap.addMarker(MarkerOptions().position(res2Loc).title("Modern Pride Family Restaurent").snippet("This is a comfortable and cozy place"))
-        googleMap.setOnInfoWindowClickListener() {
-            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_SHORT).show()
-//            val flag = 1
-//            val b = Bundle()
-//            b.putString("res2",res2.title.toString())
-//            b.putString("flag",flag.toString())
-//
-//            val i = Intent(activity,RestaurentActivity::class.java)
-//            i.putExtras(b)
-//            startActivity(i)
-        }
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(res2Loc))
-//================================================================================================================
-        val cafe1Loc = LatLng(19.103, 72.86)
-        val cafe1 = googleMap.addMarker(MarkerOptions().position(cafe1Loc).title("Grandma's Cafeteria"))
+        val cafe1Loc = LatLng(19.2180, 73.1221)
+        val cafe1 = googleMap.addMarker(MarkerOptions().position(cafe1Loc).title("Darbar"))
 
         googleMap.setOnInfoWindowClickListener() {
             Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_SHORT).show()
-
-//            val b = Bundle()
-//            b.putString("cafe1",cafe1.title.toString())
-//
-//            val i = Intent(activity,RestaurentActivity::class.java)
-//            i.putExtras(b)
-//            startActivity(i)
-
         }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(cafe1Loc))
+
+
+        val res2Loc = LatLng(19.2094, 73.0939)
+        val res2 = googleMap.addMarker(
+            MarkerOptions().position(res2Loc).title("Zayka")
+                .snippet("This is a comfortable and cozy place")
+        )
+        googleMap.setOnInfoWindowClickListener() {
+            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_SHORT).show()
+        }
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(res2Loc))
+
+
+
+        db = FirebaseDatabase.getInstance()
+        val hotRef = db.getReference("Hotels").child("Hotel Name")
+
+        hotRef.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (i in snapshot.children) {
+                        val hot = i.getValue(Hotel::class.java)
+                        hotelList.add(hot!!)
+                        val res1Loc = LatLng(hot.latitude, hot.longitude)
+                        val res1 = googleMap.addMarker(
+                            MarkerOptions().position(res1Loc).title("${hot.hotelName}")
+                        )
+                        googleMap.setOnInfoWindowClickListener() {
+                            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_LONG)
+                                .show()
+
+                        }
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(res1Loc))
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

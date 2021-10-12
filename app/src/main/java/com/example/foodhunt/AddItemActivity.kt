@@ -1,6 +1,7 @@
 package com.example.foodhunt
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,6 @@ class AddItemActivity : AppCompatActivity() {
     lateinit var itemPriceEditText: EditText
     lateinit var addItemButton: Button
     var itemList = mutableListOf<Item>()
-    var hotelList = mutableListOf<Hotel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class AddItemActivity : AppCompatActivity() {
         db = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
 
-      //  itemList = arrayListOf<Item>()
+    //    itemList = arrayListOf<Item>()
 
     }
 
@@ -71,8 +71,7 @@ class AddItemActivity : AppCompatActivity() {
         val iname = itemNameEditText.text.toString()
         val iprice = itemPriceEditText.text.toString()
 
-
-        val item = Item(iname, iprice.toInt(), 10)
+        val item = Item(iname,iprice.toInt(),10)
 
         val itemRef = db.getReference("Hotels/Hotel Name/$hotName/Items")
         itemRef.child(item.itemName.toString()).setValue(item)

@@ -18,6 +18,7 @@ class DBWrapper (val context: Context){
         rowData.put(DBHelper.CLM_USER_ID,use.userid)
         rowData.put(DBHelper.CLM_USER_EMAIL,use.email)
         rowData.put(DBHelper.CLM_USER_PWD,use.password)
+        rowData.put(DBHelper.CLM_USER_ADDR, use.address)
 
         return db.insert(DBHelper.TABLE_NAME, null, rowData)
 
@@ -25,7 +26,7 @@ class DBWrapper (val context: Context){
 
     fun getUser(): Cursor {
         //select query
-        val clms= arrayOf(DBHelper.CLM_USER_ID, DBHelper.CLM_USER_EMAIL, DBHelper.CLM_USER_PWD)
+        val clms= arrayOf(DBHelper.CLM_USER_ID, DBHelper.CLM_USER_EMAIL, DBHelper.CLM_USER_PWD, DBHelper.CLM_USER_ADDR)
         return db.query(
             DBHelper.TABLE_NAME,clms,null,
             null,null,null,null)
