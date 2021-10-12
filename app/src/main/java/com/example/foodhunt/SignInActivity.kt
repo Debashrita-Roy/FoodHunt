@@ -38,31 +38,10 @@ class SignInActivity : AppCompatActivity() {
         val userid = uidEditText.text.toString()
         val password = pwdEditText.text.toString()
         //addPredefinedHotels()
-        addCreateFirebase()
+        //addCreateFirebase()
 
         val wrapper = DBWrapper(this)
         val resultC = wrapper.getUser()
-
-//        if(resultC.count>0) {
-//            resultC.moveToFirst()
-//
-//            val id = resultC.getColumnIndex(DBHelper.CLM_USER_ID)
-//            val pw = resultC.getColumnIndex(DBHelper.CLM_USER_PWD)
-//
-//            do{
-//                val idString = resultC.getString(id)
-//                val pwString = resultC.getString(pw)
-//
-//                if (userid == idString && password == pwString){
-//                    Log.d("SignInActivity", "$idString")
-//                    Log.d("SignInActivity", "$pwString")
-//                    val i = Intent(this,DisplayActivity::class.java)
-//                    startActivity(i)
-//                }
-//            }while (resultC.moveToNext())
-//
-//        }
-
 
         when {
             userid.isEmpty() -> uidEditText.setError("Please enter user id")

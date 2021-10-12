@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodHunt">
         <activity
+            android:name=".DisplayItemActivity"
+            android:exported="true" />
+        <activity
             android:name=".OrderSummaryActivity"
             android:exported="true" />
         <activity

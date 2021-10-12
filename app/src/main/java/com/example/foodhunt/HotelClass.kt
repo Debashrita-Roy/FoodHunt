@@ -1,5 +1,7 @@
 package com.example.foodhunt
 
+import android.net.Uri
+
 
 //
 //data class Hotel(val registerId : Int,
@@ -13,11 +15,12 @@ package com.example.foodhunt
 data class Hotel(
     val registerId: Int = 0,
     val hotelName: String? = null,
-//    val image : Int,
     val description : String? = null,
     val address : String? = null,
     val latitude : Double = 0.0,
-    val longitude : Double = 0.0
+    val longitude : Double = 0.0,
+    val image : Uri,
+
 )
 
 // for items
