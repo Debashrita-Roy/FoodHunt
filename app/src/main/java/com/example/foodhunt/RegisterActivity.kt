@@ -8,13 +8,14 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.foodhunt.Database.DBWrapper
 
-data class Users(var userid:String, var email: String, var password: String )
+data class Users(var userid:String, var email: String, var password: String, val address: String )
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var uidEditText: EditText
     lateinit var emailEditText: EditText
     lateinit var pwdEditText: EditText
     lateinit var confirmpwdEditText: EditText
+    lateinit var addressEditText: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         emailEditText = findViewById(R.id.emailER)
         pwdEditText = findViewById(R.id.pwdER)
         confirmpwdEditText = findViewById(R.id.confirmpwdER)
+        addressEditText = findViewById(R.id.addressER)
 
     }
 
@@ -36,8 +38,9 @@ class RegisterActivity : AppCompatActivity() {
         val email = emailEditText.text.toString()
         val password = pwdEditText.text.toString()
         val confirmpassword = confirmpwdEditText.text.toString()
+        var address = addressEditText.text.toString()
 
-        if (userid.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+        if (userid.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && address.isNotEmpty()) {
 
             when {
                 userid.isEmpty() -> uidEditText.setError("Please enter user id")
@@ -46,10 +49,11 @@ class RegisterActivity : AppCompatActivity() {
                 password.length < 8 -> pwdEditText.setError("password should be 8 characters long")
                 confirmpassword.isEmpty() -> confirmpwdEditText.setError("Please enter user id")
                 confirmpassword != password -> confirmpwdEditText.setError("Password do not match")
+                address.isEmpty() -> addressEditText.setError("Please enter address for delivery")
 
                 else -> {
-                    Toast.makeText(this, "Welcome to Login page", Toast.LENGTH_SHORT).show()
-                    val use = Users(userid, email, password)
+                    Toast.makeText(this, "$userid Welcome to Login page", Toast.LENGTH_SHORT).show()
+                    val use = Users(userid, email, password, address)
 
                     //add to database
                     val wrapper = DBWrapper(this)
