@@ -2,4 +2,37 @@
     <string name="app_name">FoodHunt</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="we_saved_you_seat_">_____We saved you a seat!_____</string>
+    <string name="main_sign_in">Sign In</string>
+    <string name="main_register">Register</string>
+    <string name="hotel_name">HotelName</string>
+    <string name="description">Description</string>
+    <string name="address">Address</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="upload">Upload</string>
+    <string name="add_hotel">Add Hotel</string>
+    <string name="item_name">Item Name</string>
+    <string name="price">Price</string>
+    <string name="add_item">Add Item</string>
+    <string name="show_hotels">Show Hotels</string>
+    <string name="available_hotels">Available Hotels</string>
+    <string name="all_items">All items</string>
+    <string name="order_details">Order Details</string>
+    <string name="confirm">Confirm</string>
+    <string name="create">Create</string>
+    <string name="account">Account</string>
+    <string name="create_user_name">Create user name</string>
+    <string name="enter_emails">Enter Email</string>
+    <string name="create_password">Create password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="welcome">Welcome</string>
+    <string name="back">Back</string>
+    <string name="enter_user_id">Enter user ID</string>
+    <string name="enter_password">Enter password</string>
+    <string name="forgot_password">Forgot password</string>
+
+    
+
 </resources>
