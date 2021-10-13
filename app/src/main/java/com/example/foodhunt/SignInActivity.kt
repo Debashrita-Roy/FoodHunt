@@ -65,7 +65,7 @@ class SignInActivity : AppCompatActivity() {
                             Log.d("SignInActivity", "$idString")
                             Log.d("SignInActivity", "$pwString")
                             Toast.makeText(this,"Signed in with \nUserid: $userid ", Toast.LENGTH_LONG).show()
-                            val i = Intent(this, AllHotelActivity::class.java)
+                            val i = Intent(this, DisplayItemActivity::class.java)
                             startActivity(i)
                             break
                         }
