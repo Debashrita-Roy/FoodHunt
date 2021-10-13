@@ -32,6 +32,7 @@ class AllHotelActivity : AppCompatActivity() {
         hotelList = arrayListOf<Hotel>()
         itemList = arrayListOf<Item>()
 
+        addCreateFirebase()
         getHotelData()
 
        // populateList()
@@ -78,7 +79,7 @@ class AllHotelActivity : AppCompatActivity() {
                     for (i in snapshot.children){
                         val hot = i.getValue(Hotel::class.java)
                         hotelList.add(hot!!)
-                        getItemsData(hot)
+                    //    getItemsData(hot)
                     }
                     rView.adapter = HotelAdapter(hotelList)
                 }

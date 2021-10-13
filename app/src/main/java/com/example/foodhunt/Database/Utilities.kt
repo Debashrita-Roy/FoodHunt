@@ -25,10 +25,10 @@ fun addCreateFirebase(){
 
     hotRef.child(hot2.hotelName.toString()).setValue(hot2)
 
-    val item1 = Item("Pizza",10,"10")
-    val item2 = Item("Paneer",10,"10")
-    val item3 = Item("Bhurji",10,"10")
-    val item4 = Item("Bhakari",10,"10")
+    val item1 = Item("Pizza",10)
+    val item2 = Item("Paneer",10)
+    val item3 = Item("Bhurji",10)
+    val item4 = Item("Bhakari",10)
 
     val itemRef = db.getReference("Hotels/Hotel Name/${hot1.hotelName.toString()}/Items")
     itemRef.child(item1.itemName.toString()).setValue(item1)

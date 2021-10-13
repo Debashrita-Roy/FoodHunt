@@ -13,8 +13,10 @@ import android.widget.Toast.makeText
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickListener: ItemClickListener)
+class ItemAdapter(private var itemName: MutableList<Item>,
+                  private val itemClickListener: ItemClickListener)
     : RecyclerView.Adapter<ItemAdapter.ItemHolder>()  {
+
  inner class ItemHolder(v: View) : RecyclerView.ViewHolder(v) {
      val itemNameTextView = v.findViewById<TextView>(R.id.itemNameT)
      val itemPriceTextView = v.findViewById<TextView>(R.id.itemPriceT)
@@ -38,6 +40,14 @@ class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickL
         holder.itemPriceTextView.text = item.price.toString()
         holder.itemcountTextView.text = "${item.count}"
 
+        Glide.with(holder.itemView)
+            .load(item.itemImage)
+            .into(holder.itemImageView)
+
+        holder.itemView.setOnClickListener{
+            Log.d("AdAdapter","Ad Clicked:$item")
+        }
+
         var count = holder.itemcountTextView.text.toString()
         holder.addcountButton.setOnClickListener {
             itemClickListener.addCount(itemName[position],position,count.toInt())
@@ -50,14 +60,6 @@ class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickL
             val iname = holder.itemNameTextView.text.toString()
             val iprice = holder.itemPriceTextView.text.toString()
             val icount = holder.itemcountTextView.text.toString()
-
-            Glide.with(holder.itemView)
-                .load(item.itemImage)
-                .into(holder.itemImageView)
-
-            holder.itemView.setOnClickListener{
-                Log.d("AdAdapter","Ad Clicked:$item")
-            }
 
             itemClickListener.callActivity(iname,iprice,icount.toInt())
 

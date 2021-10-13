@@ -83,9 +83,6 @@ class AllItemActivity : AppCompatActivity(),ItemClickListener {
     }
 
     fun getItemsData(hot : Hotel) {
-//        val i = intent.extras
-//        val hotname = i?.getString("hotelName")
-//        Log.d("AllItemActivity","$hotname")
 
         val hotDescRef =
             db.getReference("Hotels").child("Hotel Name").child("${hot.hotelName}").child("Items")
@@ -96,10 +93,8 @@ class AllItemActivity : AppCompatActivity(),ItemClickListener {
                         val items = i.getValue(Item::class.java)
                         itemList.add(items!!)
                         itemRView.adapter = ItemAdapter(itemList,this@AllItemActivity)
-
                     }
                     Log.d("AllHotelActivity", "$itemList")
-
                 }
             }
 
