@@ -61,7 +61,7 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
         hotelImage = findViewById(R.id.hotelIV)
         uploadButton = findViewById(R.id.uploadB)
 
-
+//        addCreateFirebase()
         db = FirebaseDatabase.getInstance()
 
         storageReference = FirebaseStorage.getInstance().reference
