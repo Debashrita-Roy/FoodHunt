@@ -3,6 +3,7 @@ package com.example.foodhunt
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.*
 import android.widget.Toast.makeText
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickListener: ItemClickListener)
     : RecyclerView.Adapter<ItemAdapter.ItemHolder>()  {
@@ -20,6 +22,7 @@ class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickL
      var addcountButton = v.findViewById<ImageButton>(R.id.addCount)
      var minuscountButton = v.findViewById<ImageButton>(R.id.minusCount)
      var itemcountTextView = v.findViewById<TextView>(R.id.odercountT)
+     var itemImageView = v.findViewById<ImageView>(R.id.foodIV)
 
 
  }
@@ -48,8 +51,15 @@ class ItemAdapter(private var itemName: MutableList<Item>,private val itemClickL
             val iprice = holder.itemPriceTextView.text.toString()
             val icount = holder.itemcountTextView.text.toString()
 
-            itemClickListener.callActivity(iname,iprice,icount.toInt())
+            Glide.with(holder.itemView)
+                .load(item.itemImage)
+                .into(holder.itemImageView)
 
+            holder.itemView.setOnClickListener{
+                Log.d("AdAdapter","Ad Clicked:$item")
+            }
+
+            itemClickListener.callActivity(iname,iprice,icount.toInt())
 
         }
     }

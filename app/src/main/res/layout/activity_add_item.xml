@@ -23,7 +23,7 @@
         android:id="@+id/itemNameE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Item name"
         android:inputType="textPersonName"
@@ -53,7 +53,7 @@
         android:id="@+id/addItemB"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:backgroundTintMode="multiply"
         android:onClick="addItem"
         android:shadowColor="#E4DDDD"
@@ -61,7 +61,7 @@
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemPriceE" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadItemB" />
 
     <Button
         android:id="@+id/showHotelB"
@@ -73,21 +73,29 @@
         android:text="Show Hotel"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitItemB" />
-
-    <Button
-        android:id="@+id/submitItemB"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTintMode="multiply"
-        android:shadowColor="#E4DDDD"
-        android:text="Submit "
-        app:cornerRadius="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addItemB" />
+
+    <Button
+        android:id="@+id/uploadItemB"
+        android:layout_width="93dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTintMode="multiply"
+        android:shadowColor="#E4DDDD"
+        android:text="Upload"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemIV" />
+
+    <ImageView
+        android:id="@+id/itemIV"
+        android:layout_width="145dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemPriceE"
+        app:srcCompat="@drawable/download" />
 </androidx.constraintlayout.widget.ConstraintLayout>

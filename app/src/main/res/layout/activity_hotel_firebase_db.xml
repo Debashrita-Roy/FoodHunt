@@ -12,13 +12,13 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView20"
+            android:id="@+id/hotelIV"
             android:layout_width="446dp"
             android:layout_height="654dp"
-            android:alpha="0.8"
+            android:alpha="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.642"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -43,8 +43,9 @@
             android:layout_width="122dp"
             android:layout_height="44dp"
             android:ems="10"
+            android:hint="lattitude'"
             android:inputType="textPersonName"
-            android:text="Lat"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toStartOf="@+id/longE"
             app:layout_constraintHorizontal_bias="0.723"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +57,9 @@
             android:layout_height="44dp"
             android:layout_marginTop="24dp"
             android:ems="10"
+            android:hint="longitude"
             android:inputType="textPersonName"
-            android:text="Long"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.82"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,9 +71,9 @@
             android:layout_height="40dp"
             android:layout_marginTop="24dp"
             android:ems="10"
+            android:hint="Address"
             android:inputType="textPersonName"
-            android:text="Address"
-            android:textStyle="bold"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,44 +109,56 @@
             app:layout_constraintTop_toBottomOf="@+id/hotNameE"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <Button
-            android:id="@+id/chooseImageb"
-            android:layout_width="105dp"
-            android:layout_height="82dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTintMode="multiply"
-            android:onClick="chooseImage"
-            android:text="choose image"
-            app:layout_constraintEnd_toStartOf="@+id/imageV"
-            app:layout_constraintHorizontal_bias="0.333"
+        <!--        <Button-->
+<!--            android:id="@+id/chooseImageb"-->
+<!--            android:layout_width="105dp"-->
+<!--            android:layout_height="82dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:backgroundTintMode="multiply"-->
+<!--            android:onClick="chooseImage"-->
+<!--            android:text="choose image"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/imageV"-->
+<!--            app:layout_constraintHorizontal_bias="0.333"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/latE" />-->
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="82dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.239"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/latE" />
+            app:layout_constraintTop_toBottomOf="@+id/latE"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <Button
             android:id="@+id/uploadB"
-            android:layout_width="252dp"
+            android:layout_width="100dp"
             android:layout_height="54dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="82dp"
             android:backgroundTintMode="multiply"
             android:onClick="addHotel"
             android:shadowColor="#E4DDDD"
-            android:text="Upload Image"
+            android:text="Upload "
             app:cornerRadius="40dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.768"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageV" />
+            app:layout_constraintTop_toBottomOf="@+id/longE" />
 
-        <ImageView
-            android:id="@+id/imageV"
-            android:layout_width="98dp"
-            android:layout_height="122dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.833"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/longE"
-            tools:srcCompat="@tools:sample/avatars" />
+        <!--        <ImageView-->
+<!--            android:id="@+id/imageV"-->
+<!--            android:layout_width="98dp"-->
+<!--            android:layout_height="122dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.833"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/longE"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

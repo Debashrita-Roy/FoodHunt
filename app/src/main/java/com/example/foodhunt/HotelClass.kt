@@ -19,7 +19,8 @@ data class Hotel(
     val address : String? = null,
     val latitude : Double = 0.0,
     val longitude : Double = 0.0,
-    val image : Uri,
+ //   val imageUri: Uri,
+    var hotelImageURL : String? = null
 
 )
 
@@ -27,7 +28,7 @@ data class Hotel(
 data class Item(
     val itemName : String? = null,
     val price : Int = 0,
-    val itemImage : Int = 0,
+    val itemImage : String? = null,
     var count : Int =0
 )
 
