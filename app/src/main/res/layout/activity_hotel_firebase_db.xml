@@ -9,168 +9,156 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF">
-
-        <!--        <Button-->
-        <!--            android:id="@+id/chooseImageb"-->
-        <!--            android:layout_width="105dp"-->
-        <!--            android:layout_height="82dp"-->
-        <!--            android:layout_marginStart="20dp"-->
-        <!--            android:layout_marginTop="40dp"-->
-        <!--            android:backgroundTintMode="multiply"-->
-        <!--            android:onClick="chooseImage"-->
-        <!--            android:text="choose image"-->
-        <!--            app:layout_constraintEnd_toStartOf="@+id/imageV"-->
-        <!--            app:layout_constraintHorizontal_bias="0.333"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/latE" />-->
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/hotelIV"
-            android:layout_width="313dp"
-            android:layout_height="260dp"
+            android:layout_width="446dp"
+            android:layout_height="654dp"
+            android:alpha="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/hotelimg" />
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/pexels_valeria_boltneva_827528" />
 
         <Button
             android:id="@+id/addHotelB"
             android:layout_width="252dp"
             android:layout_height="54dp"
-            android:layout_marginTop="208dp"
+            android:layout_marginTop="244dp"
             android:backgroundTintMode="multiply"
             android:onClick="addHotel"
             android:shadowColor="#E4DDDD"
             android:text="@string/add_hotel"
             app:cornerRadius="40dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.455"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/hotNameE" />
+            app:layout_constraintTop_toBottomOf="@+id/addrE" />
 
         <EditText
             android:id="@+id/latE"
-            android:layout_width="135dp"
-            android:layout_height="43dp"
-            android:background="#EDEBEB"
+            android:layout_width="122dp"
+            android:layout_height="44dp"
             android:ems="10"
             android:hint="@string/latitude"
             android:inputType="textPersonName"
-            android:textAlignment="center"
             android:textColorHint="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toEndOf="@+id/longE"
+            app:layout_constraintEnd_toStartOf="@+id/longE"
+            app:layout_constraintHorizontal_bias="0.723"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/longE" />
 
         <EditText
             android:id="@+id/longE"
-            android:layout_width="122dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="8dp"
-            android:background="#EDEBEB"
+            android:layout_width="114dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="@string/longitude"
             android:inputType="textPersonName"
-            android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintHorizontal_bias="0.82"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addrE" />
+
+        <EditText
+            android:id="@+id/addrE"
+            android:layout_width="248dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="29dp"
+            android:ems="10"
+            android:hint="@string/address"
+            android:inputType="textPersonName"
+            android:textColorHint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descE" />
 
         <EditText
-            android:id="@+id/addrE"
-            android:layout_width="280dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="8dp"
-            android:background="#EDEDED"
-            android:ems="10"
-            android:hint="@string/address"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:textColorHint="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.475"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/longE" />
-
-        <EditText
             android:id="@+id/hotNameE"
-            android:layout_width="280dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="244dp"
-            android:background="#EDEDED"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
             android:ems="10"
             android:hint="@string/hotel_name"
             android:inputType="textPersonName"
-            android:textAlignment="center"
             android:textColorHint="#000000"
-            app:circularflow_defaultRadius="30dp"
-            app:circularflow_radiusInDP="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.471"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/descE"
-            android:layout_width="280dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="8dp"
-            android:background="#EDEBEB"
+            android:layout_width="248dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="@string/description"
             android:inputType="textPersonName"
-            android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hotNameE"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <!--        <Button-->
+<!--            android:id="@+id/chooseImageb"-->
+<!--            android:layout_width="105dp"-->
+<!--            android:layout_height="82dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:backgroundTintMode="multiply"-->
+<!--            android:onClick="chooseImage"-->
+<!--            android:text="choose image"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/imageV"-->
+<!--            app:layout_constraintHorizontal_bias="0.333"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/latE" />-->
+
+        <ImageView
+            android:id="@+id/hotelIV"
+            android:layout_width="115dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.201"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/latE"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <Button
             android:id="@+id/uploadB"
             android:layout_width="100dp"
             android:layout_height="54dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="60dp"
             android:backgroundTintMode="multiply"
             android:onClick="addHotel"
             android:shadowColor="#E4DDDD"
             android:text="@string/upload"
             app:cornerRadius="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintHorizontal_bias="0.768"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Tap to select Image"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/hotelIV" />
+            app:layout_constraintTop_toBottomOf="@+id/longE" />
 
         <!--        <ImageView-->
-        <!--            android:id="@+id/imageV"-->
-        <!--            android:layout_width="98dp"-->
-        <!--            android:layout_height="122dp"-->
-        <!--            android:layout_marginTop="12dp"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.833"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/longE"-->
-        <!--            tools:srcCompat="@tools:sample/avatars" />-->
+<!--            android:id="@+id/imageV"-->
+<!--            android:layout_width="98dp"-->
+<!--            android:layout_height="122dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.833"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/longE"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
