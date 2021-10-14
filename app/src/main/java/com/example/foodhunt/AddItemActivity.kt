@@ -68,7 +68,7 @@ class AddItemActivity : AppCompatActivity() {
             val iname = itemNameEditText.text.toString()
             val iprice = itemPriceEditText.text.toString()
 
-            val item = Item(iname,iprice.toInt(),image.toString())
+            val item = Item(iname,iprice.toInt(),0,image.toString())
 
             val itemRef = db.getReference("Hotels/Hotel Name/$hotName/Items")
             itemRef.child(item.itemName.toString()).setValue(item)

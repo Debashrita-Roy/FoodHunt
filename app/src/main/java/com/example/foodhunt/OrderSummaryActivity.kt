@@ -69,6 +69,8 @@ class OrderSummaryActivity : AppCompatActivity() {
         val rowid = wrapper.addOrder(order)
         if (rowid.toInt() != -1) {
             Toast.makeText(this, "Order Details saved", Toast.LENGTH_SHORT).show()
+            val i = Intent(this,PaymentActivity::class.java)
+            startActivity(i)
         } else
             Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()
 

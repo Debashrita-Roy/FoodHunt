@@ -12,13 +12,12 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/hotelIV"
             android:layout_width="446dp"
             android:layout_height="654dp"
             android:alpha="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.642"
+            app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -28,13 +27,14 @@
             android:id="@+id/addHotelB"
             android:layout_width="252dp"
             android:layout_height="54dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="244dp"
             android:backgroundTintMode="multiply"
             android:onClick="addHotel"
             android:shadowColor="#E4DDDD"
             android:text="@string/add_hotel"
             app:cornerRadius="40dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.455"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/addrE" />
 
@@ -83,7 +83,7 @@
             android:id="@+id/hotNameE"
             android:layout_width="250dp"
             android:layout_height="45dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="60dp"
             android:ems="10"
             android:hint="@string/hotel_name"
             android:inputType="textPersonName"
@@ -123,13 +123,28 @@
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toBottomOf="@+id/latE" />-->
 
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="82dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="72dp"
+        <EditText
+            android:id="@+id/descE"
+            android:layout_width="248dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="desc"
+            android:inputType="textPersonName"
+            android:textColorHint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.239"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hotNameE"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/hotelIV"
+            android:layout_width="115dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.201"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/latE"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
@@ -138,7 +153,7 @@
             android:id="@+id/uploadB"
             android:layout_width="100dp"
             android:layout_height="54dp"
-            android:layout_marginTop="82dp"
+            android:layout_marginTop="60dp"
             android:backgroundTintMode="multiply"
             android:onClick="addHotel"
             android:shadowColor="#E4DDDD"

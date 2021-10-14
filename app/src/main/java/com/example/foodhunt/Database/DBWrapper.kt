@@ -29,7 +29,7 @@ class DBWrapper (val context: Context){
         rowData.put(DBHelper2.CLM_ITEM_PRICE,order.itemPrice)
         rowData.put(DBHelper2.CLM_ITEM_COUNT,order.itemCount)
 
-        return db.insert(DBHelper.TABLE_ORDER_NAME, null, rowData)
+        return db.insert(DBHelper2.TABLE_ORDER_NAME, null, rowData)
     }
 
     fun getUser(): Cursor {

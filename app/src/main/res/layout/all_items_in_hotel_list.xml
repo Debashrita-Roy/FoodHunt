@@ -6,59 +6,57 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:paddingTop="10dp"
+    android:paddingRight="10dp"
     app:cardBackgroundColor="#45B1E1"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewDisplay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/foodIV"
-            android:layout_width="101dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="103dp"
+            android:layout_height="91dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.018"
+            app:layout_constraintHorizontal_bias="0.027"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/bowl" />
 
         <TextView
             android:id="@+id/itemNameT"
-            android:layout_width="184dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="103dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
             android:text="Item"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toEndOf="@+id/foodIV"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/itemPriceT"
-            android:layout_width="151dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="4dp"
+            android:layout_width="105dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             android:text="Price"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView11" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="90dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="18dp"
+            android:layout_width="94dp"
+            android:layout_height="31dp"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/orderFoodB"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/foodIV"
             app:layout_constraintTop_toBottomOf="@+id/textView11">
 
@@ -90,7 +88,7 @@
             android:id="@+id/orderFoodB"
             android:layout_width="95dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
             android:backgroundTintMode="multiply"
             android:onClick="orderFood"
             android:text="Order"
@@ -98,22 +96,22 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.772"
+            app:layout_constraintStart_toStartOf="@+id/itemPriceT"
             app:layout_constraintTop_toBottomOf="@+id/itemPriceT"
-            app:layout_constraintVertical_bias="0.545" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="36dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="44dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="12dp"
             android:text="Rs"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/itemPriceT"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toEndOf="@+id/foodIV"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemNameT" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

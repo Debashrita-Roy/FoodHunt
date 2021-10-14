@@ -132,7 +132,6 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this, "Failed to upload", Toast.LENGTH_LONG).show()
         }
 
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

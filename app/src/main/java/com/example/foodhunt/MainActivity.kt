@@ -103,5 +103,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         else
             Toast.makeText(this, "No Users Added yet", Toast.LENGTH_SHORT).show()
     }
+
+    fun buttonClick(view: View) {}
 }
 

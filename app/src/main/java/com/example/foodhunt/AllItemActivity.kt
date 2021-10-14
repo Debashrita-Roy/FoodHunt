@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_all_item.*
 
 class AllItemActivity : AppCompatActivity(),ItemClickListener {
 
@@ -29,8 +31,7 @@ class AllItemActivity : AppCompatActivity(),ItemClickListener {
 //            Toast.makeText(this, "button Clicked", Toast.LENGTH_SHORT).show()
 //
 //        }
-
-        itemRView = findViewById(R.id.itemRV)
+        itemRView = findViewById(R.id.itemRecV)
         itemRView.setHasFixedSize(true)
         itemRView.layoutManager = LinearLayoutManager(this)
         getHotelData()
@@ -38,14 +39,13 @@ class AllItemActivity : AppCompatActivity(),ItemClickListener {
 
     override fun callActivity(itemname: String, itemprice: String, itemcount: Int) {
         val b = Bundle()
-        b.putString("iname",itemname)
-        b.putString("iprice",itemprice)
-        b.putInt("icount",itemcount)
-        val i = Intent(this,OrderSummaryActivity::class.java)
+        b.putString("iname", itemname)
+        b.putString("iprice", itemprice)
+        b.putInt("icount", itemcount)
+        val i = Intent(this, OrderSummaryActivity::class.java)
         i.putExtras(b)
         startActivity(i)
     }
-
 
     override fun addCount(item: Item, position: Int, count: Int) {
         item.count = item.count + 1

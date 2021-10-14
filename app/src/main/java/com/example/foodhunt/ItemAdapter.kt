@@ -48,6 +48,14 @@ class ItemAdapter(private var itemName: MutableList<Item>,
             Log.d("AdAdapter","Ad Clicked:$item")
         }
 
+        Glide.with(holder.itemImageView)
+            .load(item.itemImage)
+            .into(holder.itemImageView)
+
+        holder.itemView.setOnClickListener{
+            Log.d("AdAdapter","Ad Clicked:$item")
+        }
+
         var count = holder.itemcountTextView.text.toString()
         holder.addcountButton.setOnClickListener {
             itemClickListener.addCount(itemName[position],position,count.toInt())

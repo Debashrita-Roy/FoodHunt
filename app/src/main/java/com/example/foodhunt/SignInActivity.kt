@@ -23,6 +23,7 @@ class SignInActivity : AppCompatActivity() {
     lateinit var pwdEditText: EditText
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -65,7 +66,9 @@ class SignInActivity : AppCompatActivity() {
                             Log.d("SignInActivity", "$idString")
                             Log.d("SignInActivity", "$pwString")
                             Toast.makeText(this,"Signed in with \nUserid: $userid ", Toast.LENGTH_LONG).show()
+
                             val i = Intent(this, DisplayItemActivity::class.java)
+
                             startActivity(i)
                             break
                         }
@@ -73,9 +76,9 @@ class SignInActivity : AppCompatActivity() {
                             Toast.makeText(
                                 this,
                                 """
-                                Please register if a first time user :)
-                                                 or
                                 Please Check your ID and Password 
+                                            or 
+                                Please Register as no account was found !
                                 """.trimIndent(),
                                 Toast.LENGTH_LONG
                             ).show()
@@ -83,8 +86,15 @@ class SignInActivity : AppCompatActivity() {
                     } while (resultC.moveToNext())
 
                 }
+                else{
+                    Toast.makeText(this, "No account found ! Please Register", Toast.LENGTH_SHORT).show()
+                    val i = Intent(this,RegisterActivity::class.java)
+                    startActivity(i)
+                }
             }
         }
+        uidEditText.setText("")
+        pwdEditText.setText("")
     }
 
 

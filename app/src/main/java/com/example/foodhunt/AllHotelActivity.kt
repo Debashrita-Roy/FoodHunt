@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -35,18 +36,7 @@ class AllHotelActivity : AppCompatActivity() {
         addCreateFirebase()
         getHotelData()
 
-       // populateList()
-        //rView.adapter = HotelAdapter(hotelList)
     }
-
-
-
-//////////////////////////////////trying beacuse net nahiyeee
-
-// fun populateList() {
-//        hotelList.add(Hotel(101, "Zayka", "desc" ))
-//    }
-/////////////////////////////////////////////////////////////////
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menu?.add(" Show on Map ")
@@ -67,6 +57,18 @@ class AllHotelActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    fun hotelSelectionDone(h : Hotel){
+        Toast.makeText(this, "Selected Hotel: ${h.hotelName}",
+            Toast.LENGTH_LONG).show()
+
+
+    }
+
+    fun setupRecyclerview(){
+        rView.adapter = HotelAdapter(hotelList,::hotelSelectionDone)
+    }
+
+
 
     fun getHotelData() {
         db = FirebaseDatabase.getInstance()
@@ -79,35 +81,12 @@ class AllHotelActivity : AppCompatActivity() {
                     for (i in snapshot.children){
                         val hot = i.getValue(Hotel::class.java)
                         hotelList.add(hot!!)
-                    //    getItemsData(hot)
+
                     }
-                    rView.adapter = HotelAdapter(hotelList)
+                    //rView.adapter = HotelAdapter(hotelList,::)
+                    setupRecyclerview()
                 }
             }
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
-
-    }
-
-    fun getItemsData(hot: Hotel) {
-        val hotDescRef =
-            db.getReference("Hotels").child("Hotel Name").child("${hot.hotelName}").child("Items")
-        hotDescRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snap: DataSnapshot) {
-                if (snap.exists()) {
-                    for (i in snap.children) {
-                        val items = i.getValue(Item::class.java)
-                        itemList.add(items!!)
-                    }
-                    Log.d("AllHotelActivity", "$itemList")
-
-                }
-            }
-
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }

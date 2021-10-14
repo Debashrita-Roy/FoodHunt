@@ -46,8 +46,8 @@ class DBHelper2(context: Context) : SQLiteOpenHelper(context,"Orders.db",null,1)
     }
 
         val QUERY_CREATE_TABLE2 =
-            "create table ${DBHelper.TABLE_ORDER_NAME}(${DBHelper.CLM_ITEM_NAME} text," +
-                    "${DBHelper.CLM_ITEM_PRICE} text, ${DBHelper.CLM_ITEM_COUNT} text)"
+            "create table ${DBHelper2.TABLE_ORDER_NAME}(${DBHelper2.CLM_ITEM_NAME} text," +
+                    "${DBHelper2.CLM_ITEM_PRICE} text, ${DBHelper2.CLM_ITEM_COUNT} text)"
 
         override fun onCreate(db: SQLiteDatabase?) {
             //executed first time when db is created

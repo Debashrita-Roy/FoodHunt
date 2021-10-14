@@ -16,20 +16,13 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/usernameT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MitanshBanduk"
+        android:text="Welcome"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="mitanshbanduk@gmail.com"
-        android:textColor="#000000" />
 
 
 </LinearLayout>
