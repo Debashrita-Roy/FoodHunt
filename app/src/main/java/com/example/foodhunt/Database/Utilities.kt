@@ -1,8 +1,13 @@
 package com.example.foodhunt
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -39,5 +44,3 @@ fun addCreateFirebase(){
     itemRef2.child(item4.itemName.toString()).setValue(item4)
 
 }
-
-

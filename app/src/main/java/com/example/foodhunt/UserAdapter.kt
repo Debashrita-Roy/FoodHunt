@@ -6,5 +6,4 @@ import android.widget.ArrayAdapter
 
 class UserAdapter(context: Context, UserData: MutableList<Users>){
 
-
 }
