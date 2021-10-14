@@ -10,6 +10,7 @@
         android:id="@+id/cashpayB"
         android:layout_width="251dp"
         android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:backgroundTintMode="multiply"
         android:onClick="buttonClick"
         android:shadowColor="#E4DDDD"
@@ -24,7 +25,7 @@
         android:id="@+id/cardpayB"
         android:layout_width="248dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="204dp"
         android:onClick="buttonClick"
         android:text="Card payment"
         app:cornerRadius="30dp"
@@ -47,21 +48,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/parentL"
-        android:layout_width="313dp"
-        android:layout_height="515dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/paymentT">
-
-    </FrameLayout>
-
     <Button
         android:id="@+id/upiB"
         android:layout_width="252dp"
         android:layout_height="49dp"
+        android:layout_marginTop="8dp"
         android:onClick="buttonClick"
         android:text="UPI Payment"
         app:cornerRadius="30dp"
@@ -69,5 +60,43 @@
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cashpayB" />
+
+    <ImageView
+        android:id="@+id/payIV"
+        android:layout_width="303dp"
+        android:layout_height="191dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentT"
+        app:srcCompat="@drawable/payment" />
+
+    <FrameLayout
+        android:id="@+id/parentL"
+        android:layout_width="315dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/paymentT">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/editB"
+        android:layout_width="251dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTintMode="multiply"
+        android:onClick="buttonClick"
+        android:shadowColor="#E4DDDD"
+        android:text="Edit Order"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upiB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

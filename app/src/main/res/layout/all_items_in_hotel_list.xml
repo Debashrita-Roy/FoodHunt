@@ -7,88 +7,94 @@
     android:layout_marginTop="10dp"
     android:paddingTop="10dp"
     android:paddingRight="10dp"
-    app:cardBackgroundColor="#45B1E1"
+    app:cardBackgroundColor="#F8FBFB"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/viewDisplay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="259dp">
 
         <ImageView
             android:id="@+id/foodIV"
-            android:layout_width="103dp"
-            android:layout_height="91dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="312dp"
+            android:layout_height="151dp"
+            android:layout_marginBottom="108dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.027"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/bowl" />
 
         <TextView
             android:id="@+id/itemNameT"
-            android:layout_width="103dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:text="Item"
-            android:textAlignment="center"
-            android:textSize="14sp"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/foodIV"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodIV" />
 
         <TextView
             android:id="@+id/itemPriceT"
-            android:layout_width="105dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="101dp"
+            android:layout_height="28dp"
             android:text="Price"
-            android:textAlignment="center"
-            android:textSize="14sp"
+            android:textAlignment="viewStart"
+            android:textColor="#D81B60"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.187"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView11" />
 
         <LinearLayout
+
             android:id="@+id/linearLayout"
-            android:layout_width="94dp"
-            android:layout_height="31dp"
+            android:layout_width="86dp"
+            android:layout_height="25dp"
+            android:background="#FEFEFF"
             android:orientation="horizontal"
+            app:circularflow_defaultRadius="30dp"
+            app:circularflow_radiusInDP="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/orderFoodB"
-            app:layout_constraintStart_toEndOf="@+id/foodIV"
-            app:layout_constraintTop_toBottomOf="@+id/textView11">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
                 android:id="@+id/minusCount"
-                android:layout_width="28dp"
+                android:layout_width="25dp"
                 android:layout_height="match_parent"
                 android:onClick="minusCountClick"
                 app:srcCompat="@android:drawable/button_onoff_indicator_on" />
 
             <TextView
                 android:id="@+id/odercountT"
-                android:layout_width="31dp"
+                android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:text="1"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="20sp" />
 
             <ImageButton
                 android:id="@+id/addCount"
-                android:layout_width="match_parent"
+                android:layout_width="31dp"
                 android:layout_height="match_parent"
                 android:onClick="addCountClick"
                 app:srcCompat="@android:drawable/ic_input_add" />
-
         </LinearLayout>
 
         <Button
             android:id="@+id/orderFoodB"
-            android:layout_width="95dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="259dp"
+            android:layout_height="42dp"
             android:backgroundTintMode="multiply"
             android:onClick="orderFood"
             android:text="Order"
@@ -96,21 +102,22 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.772"
-            app:layout_constraintStart_toStartOf="@+id/itemPriceT"
-            app:layout_constraintTop_toBottomOf="@+id/itemPriceT"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView11"
+            app:layout_constraintVertical_bias="0.585" />
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="44dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="31dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
             android:text="Rs"
-            android:textAlignment="center"
-            android:textSize="14sp"
+            android:textAlignment="viewStart"
+            android:textColor="#D81B60"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/itemPriceT"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemNameT" />
 

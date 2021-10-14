@@ -9,55 +9,43 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="558dp"
-        android:layout_height="459dp"
-        android:rotation="-90"
-        android:scaleType="fitEnd"
+        android:layout_width="430dp"
+        android:layout_height="346dp"
+        android:layout_marginTop="4dp"
+        android:rotation="88"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg2" />
+        app:srcCompat="@drawable/food" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/welcome"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
+        android:layout_width="221dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="280dp"
+        android:text="Welcome Back"
+        android:textColor="#000000"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="39dp"
-        android:layout_height="42dp"
-        android:text="@string/back"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/userIdE"
         android:layout_width="257dp"
         android:layout_height="49dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/enter_user_id"
+        android:hint="Enter User ID"
         android:inputType="textPersonName"
         android:textColor="#3949AB"
         android:textColorHint="#84858E"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/pwdE"
@@ -65,7 +53,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/enter_password"
+        android:hint="Enter password"
         android:inputType="textPassword"
         android:textColor="#3949AB"
         android:textColorHint="#988E8E"
@@ -101,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="forgotPwdClick"
-        android:text="@string/forgot_password"
+        android:text="Forgot password?"
         android:textColor="#3949AB"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/pwdE"
@@ -111,11 +99,11 @@
         android:id="@+id/signB"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:backgroundTintMode="multiply"
         android:onClick="signClick"
         android:shadowColor="#E4DDDD"
-        android:text="@string/main_sign_in"
+        android:text="Sign in"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"

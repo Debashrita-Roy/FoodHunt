@@ -60,8 +60,8 @@
         android:id="@+id/imageView11"
         android:layout_width="157dp"
         android:layout_height="111dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="280dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/drink" />
@@ -70,7 +70,7 @@
         android:id="@+id/imageView14"
         android:layout_width="174dp"
         android:layout_height="173dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="252dp"
         android:layout_marginEnd="144dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -79,13 +79,13 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_height="41dp"
         android:layout_marginTop="36dp"
         android:text="@string/we_saved_you_seat_"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

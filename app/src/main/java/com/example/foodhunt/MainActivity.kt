@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun populateList() {
+  /*  private fun populateList() {
         val wrapper= DBWrapper(this)
         val resultC=wrapper.getUser()
         userList.clear()
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         else
             Toast.makeText(this, "No Users Added yet", Toast.LENGTH_SHORT).show()
-    }
+    }*/
 
     fun buttonClick(view: View) {}
 }

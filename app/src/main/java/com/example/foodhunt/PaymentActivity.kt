@@ -4,16 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 
 class PaymentActivity : AppCompatActivity() {
+
+
     lateinit var cashOnDeliveryButton: Button
     lateinit var cardPaymentButton: Button
     lateinit var upiPaymentButton: Button
     lateinit var paymentTextView: TextView
+    lateinit var paymentImageView: ImageView
+    
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
@@ -22,6 +30,7 @@ class PaymentActivity : AppCompatActivity() {
         cardPaymentButton=findViewById(R.id.cardpayB)
         upiPaymentButton=findViewById(R.id.upiB)
         paymentTextView=findViewById(R.id.paymentT)
+        paymentImageView=findViewById(R.id.payIV)
     }
 
     fun buttonClick(view: View) {
@@ -29,6 +38,8 @@ class PaymentActivity : AppCompatActivity() {
         cardPaymentButton.isVisible=false
         upiPaymentButton.isVisible=false
         paymentTextView.isVisible=false
+        paymentImageView.isVisible=false
+
 
         when(view.id){
             R.id.cashpayB ->{

@@ -10,128 +10,154 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/order_details"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/order_details"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="257dp"
-        android:layout_height="208dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:srcCompat="@drawable/bowl" />
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="280dp"
+            android:layout_height="174dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:srcCompat="@drawable/bowl" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="156dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="58dp"
+            android:layout_width="276dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
             android:onClick="confirmClick"
             android:text="@string/confirm"
+            app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/amountT" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Item Name"
-        app:layout_constraintEnd_toEndOf="@+id/itemT"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView15" />
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Item Name"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Price in ₹"
-        app:layout_constraintEnd_toStartOf="@+id/textView20"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Price in ₹"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-    <TextView
-        android:id="@+id/itemT"
-        android:layout_width="85dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="36dp"
-        android:text="item name"
-        android:textSize="19dp"
-        app:layout_constraintEnd_toStartOf="@+id/priceT"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        <TextView
+            android:id="@+id/itemT"
+            android:layout_width="189dp"
+            android:layout_height="36dp"
+            android:text="item name"
+            android:textAlignment="center"
+            android:textColor="#3949AB"
+            android:textSize="19dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.214"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
 
-    <TextView
-        android:id="@+id/priceT"
-        android:layout_width="43dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="price"
-        android:textSize="19dp"
-        app:layout_constraintEnd_toStartOf="@+id/countE"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        <TextView
+            android:id="@+id/priceT"
+            android:layout_width="144dp"
+            android:layout_height="30dp"
+            android:text="price"
+            android:textAlignment="center"
+            android:textColor="#D81B60"
+            android:textSize="19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toEndOf="@+id/textView15"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Count"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="@+id/textView15" />
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Count"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
 
-    <EditText
-        android:id="@+id/countE"
-        android:layout_width="74dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="9dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        <EditText
+            android:id="@+id/countE"
+            android:layout_width="150dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="9dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#FFB300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.846"
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toTopOf="@+id/textView20" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Total Amount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemT" />
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="Total Amount"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemT" />
 
-    <TextView
-        android:id="@+id/amountT"
-        android:layout_width="74dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="12dp"
-        android:text="amount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        <TextView
+            android:id="@+id/amountT"
+            android:layout_width="112dp"
+            android:layout_height="30dp"
+            android:text="amount"
+            android:textAlignment="center"
+            android:textColor="#E53935"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView21" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

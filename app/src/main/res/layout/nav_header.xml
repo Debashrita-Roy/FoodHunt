@@ -8,21 +8,28 @@
     android:layout_marginStart="16dp"
     >
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/cod">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="159dp"
+        android:layout_height="116dp"
+        android:src="@drawable/logoblack"
 
-    </de.hdodenhof.circleimageview.CircleImageView>
+        />
 
     <TextView
         android:id="@+id/usernameT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:textColor="#000000"
+        android:text="Welcome to FoodHunt"
+        android:textColor="#3949AB"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hungry enough?"
+        android:textColor="#D81B60" />
 
 
 </LinearLayout>

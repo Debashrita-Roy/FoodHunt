@@ -7,67 +7,71 @@
     tools:context=".AddItemActivity">
 
     <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="581dp"
-        android:layout_height="597dp"
-        android:alpha="0.7"
-        android:rotation="-90"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/itemIV"
+        android:layout_width="309dp"
+        android:layout_height="241dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pexels_ella_olsson_1640774"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/itemimage" />
 
     <EditText
         android:id="@+id/itemNameE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="271dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="260dp"
+        android:background="#ECE6E6"
         android:ems="10"
-        android:hint="item name"
+        android:hint="Item Name"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#000000"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/itemPriceE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="271dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#ECE6E6"
         android:ems="10"
-        android:hint="price"
+        android:hint="Price"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#000000"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameE" />
 
     <Button
         android:id="@+id/addItemB"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="263dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
         android:backgroundTintMode="multiply"
         android:onClick="addItem"
         android:shadowColor="#E4DDDD"
         android:text="@string/add_item"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uploadItemB" />
+        app:layout_constraintTop_toBottomOf="@+id/itemPriceE" />
 
     <Button
         android:id="@+id/showHotelB"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
         android:backgroundTintMode="multiply"
         android:onClick="showHotel"
         android:text="@string/show_hotels"
@@ -78,24 +82,29 @@
 
     <Button
         android:id="@+id/uploadItemB"
-        android:layout_width="93dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="121dp"
+        android:layout_height="55dp"
         android:backgroundTintMode="multiply"
         android:shadowColor="#E4DDDD"
         android:text="upload"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemIV" />
+        tools:layout_editor_absoluteY="171dp" />
 
-    <ImageView
-        android:id="@+id/itemIV"
-        android:layout_width="145dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="13dp"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="Tap to select Image"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemPriceE"
-        app:srcCompat="@drawable/download" />
+        app:layout_constraintTop_toTopOf="@+id/itemIV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
