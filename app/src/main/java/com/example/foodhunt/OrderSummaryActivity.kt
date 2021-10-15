@@ -18,7 +18,7 @@ class OrderSummaryActivity : AppCompatActivity() {
     lateinit var itemnTextView: TextView
     lateinit var amountTextView: TextView
     lateinit var priceTextView: TextView
-    lateinit var countEditText: EditText
+    lateinit var countTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class OrderSummaryActivity : AppCompatActivity() {
         itemnTextView = findViewById(R.id.itemT)
         amountTextView = findViewById(R.id.amountT)
         priceTextView = findViewById(R.id.priceT)
-        countEditText = findViewById(R.id.countE)
+        countTextView = findViewById(R.id.countT)
 
         val g = intent.extras
         val iname = g?.getString("iname")
@@ -41,18 +41,7 @@ class OrderSummaryActivity : AppCompatActivity() {
         itemnTextView.setText("$iname")
         priceTextView.setText("$iprice")
         amountTextView.setText("$price")
-        countEditText.setText("$icount")
-
-        val order = Order(iname.toString(),iprice.toString(), icount.toString())
-
-        val wrapper = DBWrapper(this)
-        val rowid = wrapper.addOrder(order)
-        if (rowid.toInt() != -1) {
-            Toast.makeText(this, "Order Details saved", Toast.LENGTH_SHORT).show()
-        } else
-            Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()
-
-
+        countTextView.setText("$icount")
 
     }
 
@@ -65,11 +54,19 @@ class OrderSummaryActivity : AppCompatActivity() {
 
         val order = Order(iname.toString(),iprice.toString(), icount.toString())
 
+        //
+        val b = Bundle()
+        b.putString("iname", iname)
+        b.putString("iprice", iprice)
+        b.putInt("icount", icount!!)
+        //
+
         val wrapper = DBWrapper(this)
         val rowid = wrapper.addOrder(order)
         if (rowid.toInt() != -1) {
             Toast.makeText(this, "Order Details saved", Toast.LENGTH_SHORT).show()
             val i = Intent(this,PaymentActivity::class.java)
+            i.putExtras(b)
             startActivity(i)
         } else
             Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()

@@ -48,4 +48,15 @@ class DBWrapper (val context: Context){
             DBHelper2.TABLE_ORDER_NAME,clms,null,
             null,null,null,null)
     }
+
+    fun editOrder(order: Order): Int{
+        val rowData = ContentValues()
+        rowData.put(DBHelper2.CLM_ITEM_NAME,order.itemName)
+        rowData.put(DBHelper2.CLM_ITEM_PRICE,order.itemPrice)
+        rowData.put(DBHelper2.CLM_ITEM_COUNT,order.itemCount)
+        val args = arrayOf("${order.itemName}")
+
+        return db.update(DBHelper.TABLE_ORDER_NAME, rowData, "${DBHelper2.CLM_ITEM_NAME} = ?", args)
+    }
+
 }

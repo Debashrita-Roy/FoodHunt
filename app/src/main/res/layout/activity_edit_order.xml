@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderSummaryActivity">
+    tools:context=".EditOrderActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -37,17 +37,29 @@
             app:srcCompat="@drawable/bowl" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/confirmB"
             android:layout_width="276dp"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="112dp"
             android:onClick="confirmClick"
             android:text="@string/confirm"
             app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/amountT" />
+            app:layout_constraintTop_toTopOf="@+id/editamountT" />
+
+        <Button
+            android:id="@+id/updateB"
+            android:layout_width="276dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:onClick="updateClick"
+            android:text="Update"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editamountT" />
 
         <TextView
             android:id="@+id/textView14"
@@ -78,7 +90,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
-            android:id="@+id/itemT"
+            android:id="@+id/edititemT"
             android:layout_width="189dp"
             android:layout_height="36dp"
             android:text="item name"
@@ -92,7 +104,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView14" />
 
         <TextView
-            android:id="@+id/priceT"
+            android:id="@+id/editpriceT"
             android:layout_width="144dp"
             android:layout_height="30dp"
             android:text="price"
@@ -130,10 +142,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemT" />
+            app:layout_constraintTop_toBottomOf="@+id/edititemT" />
 
         <TextView
-            android:id="@+id/amountT"
+            android:id="@+id/editamountT"
             android:layout_width="112dp"
             android:layout_height="30dp"
             android:text="amount"
@@ -145,17 +157,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView21" />
 
-        <TextView
-            android:id="@+id/countT"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
+        <EditText
+            android:id="@+id/editCountE"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:ems="10"
+            android:inputType="textPersonName"
             android:text="Count"
             android:textColor="#E53935"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.586"
+            app:layout_constraintHorizontal_bias="0.869"
             app:layout_constraintStart_toEndOf="@+id/textView20"
-            app:layout_constraintTop_toTopOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/editpriceT" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
