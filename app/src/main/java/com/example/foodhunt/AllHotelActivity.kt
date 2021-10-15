@@ -33,30 +33,11 @@ class AllHotelActivity : AppCompatActivity() {
         hotelList = arrayListOf<Hotel>()
         itemList = arrayListOf<Item>()
 
-        addCreateFirebase()
+        //addCreateFirebase()
         getHotelData()
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menu?.add(" Show on Map ")
-        menu?.add("Show all Items")
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.title){
-            " Show on Map " -> {
-                val mapfrag = MapsFragment()
-                supportFragmentManager.beginTransaction().add(R.id.containerL,mapfrag).commit()
-            }
-            "Show all Items" ->{
-                val i  = Intent(this, AllItemActivity::class.java)
-                startActivity(i)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
     fun hotelSelectionDone(h : Hotel){
         Toast.makeText(this, "Selected Hotel: ${h.hotelName}",
             Toast.LENGTH_LONG).show()

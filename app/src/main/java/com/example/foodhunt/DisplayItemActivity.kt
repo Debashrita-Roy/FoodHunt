@@ -1,6 +1,9 @@
 package com.example.foodhunt
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,12 +23,16 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.all_hotel_list_item.*
+import java.io.InputStream
 import javax.security.auth.callback.Callback
+import kotlin.system.exitProcess
 
 class DisplayItemActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     var hotelList = mutableListOf<Hotel>()
     lateinit var rView: RecyclerView
+    lateinit var preferences: SharedPreferences
+    lateinit var db: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,14 +68,19 @@ class DisplayItemActivity : AppCompatActivity() {
                 }
                 R.id.nav_offer -> {
                     Toast.makeText(applicationContext, "Clicked offers", Toast.LENGTH_SHORT).show()
-                    val i = Intent(this, DisplayItemActivity::class.java)
+                    val i = Intent(this,foodhuntgold::class.java)
                     startActivity(i)
                 }
                 R.id.nav_logout -> {
-                    Toast.makeText(applicationContext, "Please sign-in again", Toast.LENGTH_SHORT)
-                        .show()
+
+                    val userdetails: SharedPreferences.Editor = preferences.edit()
+                    userdetails.clear()
+                    userdetails.apply()
+
                     val i = Intent(this, MainActivity::class.java)
                     startActivity(i)
+                    Toast.makeText(applicationContext, "Logged out", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
             true
@@ -76,8 +88,8 @@ class DisplayItemActivity : AppCompatActivity() {
         rView = findViewById(R.id.RV)
         rView.setHasFixedSize(true)
         rView.layoutManager = LinearLayoutManager(this)
-
-        addCreateFirebase()
+        db = FirebaseDatabase.getInstance()
+      //  addCreateFirebase()
         getHotelData()
     }
     fun hotelSelectionDone(h : Hotel){
@@ -124,6 +136,11 @@ class DisplayItemActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onBackPressed() {
+        finish();
+        System.exit(0)
     }
 
 

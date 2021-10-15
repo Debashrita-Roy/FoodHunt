@@ -6,22 +6,26 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.example.foodhunt.Database.DBHelper
 import com.example.foodhunt.Database.DBWrapper
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
 
     lateinit var uidEditText: EditText
     lateinit var pwdEditText: EditText
-
+    lateinit var sharedPreferences : SharedPreferences
+    var isRemembered = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +36,25 @@ class SignInActivity : AppCompatActivity() {
 
         uidEditText = findViewById(R.id.userIdE)
         pwdEditText = findViewById(R.id.pwdE)
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF",Context.MODE_PRIVATE)
+        isRemembered = sharedPreferences.getBoolean("CHECKBOX",false)
+
+        if(isRemembered){
+            val i = Intent(this, DisplayItemActivity::class.java)
+            startActivity(i)
+            finish()
+
+        }
+
+
     }
 
     fun signClick(view: View) {
 
         val userid = uidEditText.text.toString()
         val password = pwdEditText.text.toString()
+        val checked : Boolean =  rememberC.isChecked
         //addPredefinedHotels()
         //addCreateFirebase()
 
@@ -62,39 +79,52 @@ class SignInActivity : AppCompatActivity() {
                         val idString = resultC.getString(id)
                         val pwString = resultC.getString(pw)
 
-                        if (userid == idString && password == pwString) {
-                            Log.d("SignInActivity", "$idString")
-                            Log.d("SignInActivity", "$pwString")
-                            Toast.makeText(this,"Signed in with \nUserid: $userid ", Toast.LENGTH_LONG).show()
+                        if (userid == idString ) {
+                            if (password == pwString) {
+                                Log.d("SignInActivity", "$idString")
+                                Log.d("SignInActivity", "$pwString")
+                                Toast.makeText(
+                                    this,
+                                    "Signed in with \nUserid: $userid ",
+                                    Toast.LENGTH_LONG
+                                ).show()
 
-                            val i = Intent(this, DisplayItemActivity::class.java)
+                                val userDetails: SharedPreferences.Editor = sharedPreferences.edit()
+                                userDetails.putString("USERNAME", userid)
+                                userDetails.putString("PASSWORD", password)
+                                userDetails.putBoolean("CHECKBOX", checked)
+                                userDetails.apply()
 
+                                val i = Intent(this, DisplayItemActivity::class.java)
+                                startActivity(i)
+                                break
+                            } else {
+                                Toast.makeText(
+                                    this,
+                                    "Wrong credentials ! Please check your ID or password",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                pwdEditText.setText("")
+                            }
+                        } else if(password == pwString){
+                            Toast.makeText(this, "Wrong credentials ! Please check your ID or password", Toast.LENGTH_SHORT).show()
+                            pwdEditText.setText("")
+                        }else{
+                            Toast.makeText(this, "No accounts found with this userid !! Please Register :) ", Toast.LENGTH_SHORT).show()
+                            val i = Intent(this,RegisterActivity::class.java)
                             startActivity(i)
-                            break
-                        }
-                        else {
-                            Toast.makeText(
-                                this,
-                                """
-                                Please Check your ID and Password 
-                                            or 
-                                Please Register as no account was found !
-                                """.trimIndent(),
-                                Toast.LENGTH_LONG
-                            ).show()
                         }
                     } while (resultC.moveToNext())
 
                 }
                 else{
-                    Toast.makeText(this, "No account found ! Please Register", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, " No accounts created untill now ! Please create one", Toast.LENGTH_SHORT).show()
                     val i = Intent(this,RegisterActivity::class.java)
                     startActivity(i)
                 }
             }
         }
-        uidEditText.setText("")
-        pwdEditText.setText("")
+
     }
 
 

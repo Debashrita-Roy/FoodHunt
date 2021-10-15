@@ -1,5 +1,4 @@
 package com.example.foodhunt
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +28,6 @@ class EditOrderActivity : AppCompatActivity() {
         val iname = g?.getString("iname")
         val iprice = g?.getString("iprice")
         val icount = g?.getInt("icount") ?: 0
-
         Log.d("EditOrderActivity","$iname $iprice $icount")
 
         itemnTextView.setText(iname)
