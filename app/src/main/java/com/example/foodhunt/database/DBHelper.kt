@@ -1,4 +1,4 @@
-package com.example.foodhunt.Database
+package com.example.foodhunt.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

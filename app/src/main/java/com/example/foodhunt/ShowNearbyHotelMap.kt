@@ -34,8 +34,7 @@ class ShowNearbyHotelMap : AppCompatActivity() {
         fetchLocation()
 
         supportActionBar?.setTitle("Hotels Near By")
-//            val mapfrag = MapsFragment()
-//            supportFragmentManager.beginTransaction().add(R.id.nearbymapsL, mapfrag).commit()
+
     }
 
     private fun fetchLocation() {

@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.database
 
 import android.Manifest
 import android.content.pm.PackageManager

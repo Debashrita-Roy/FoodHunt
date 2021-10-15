@@ -1,6 +1,10 @@
 package com.example.foodhunt
 
+import com.example.foodhunt.database.db
+import com.example.foodhunt.hoteldata.Hotel
+
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.fragment.app.Fragment
@@ -27,8 +31,6 @@ import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.model.CameraPosition
 
 
-
-
 class MapsFragment : Fragment() {
 
     var hotelList = mutableListOf<Hotel>()
@@ -47,8 +49,8 @@ class MapsFragment : Fragment() {
 
         val bundle = arguments
         val lat = bundle?.getDouble("latitude")
-        val long =  bundle?.getDouble("longitude")
-        Log.d("MapsFragment","lat : $lat, long : $long")
+        val long = bundle?.getDouble("longitude")
+        Log.d("MapsFragment", "lat : $lat, long : $long")
 
         val cafe1Loc = LatLng(19.2180, 73.1221)
         val cafe1 = googleMap.addMarker(MarkerOptions().position(cafe1Loc).title("Darbar"))
@@ -126,17 +128,18 @@ class MapsFragment : Fragment() {
                         val distance = userLocation.distanceTo(hotelLocation)
                         Log.d("MapsFragment", "distance : $distance")
 
-                        if(distance < 100000) {
+                        if (distance < 100000) {
                             val res1 = googleMap.addMarker(
                                 MarkerOptions().position(res1Loc).title("${hot.hotelName}")
                             )
                             googleMap.setOnInfoWindowClickListener() {
                                 Toast.makeText(
                                     activity,
-                                    "Clicked on ${it.title}",
+                                    "See items in ${it.title}",
                                     Toast.LENGTH_LONG
-                                )
-                                    .show()
+                                ).show()
+                                val i = Intent(activity,DisplayItemActivity::class.java)
+                                startActivity(i)
 
                             }
                             val cameraPosition =
@@ -159,7 +162,6 @@ class MapsFragment : Fragment() {
     }
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -175,6 +177,5 @@ class MapsFragment : Fragment() {
     }
 
 }
-
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItemActivity">
+    tools:context=".itemdata.AddItemActivity">
 
     <ImageView
         android:id="@+id/itemIV"
@@ -58,7 +58,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
         android:backgroundTintMode="multiply"
-        android:onClick="addItem"
         android:shadowColor="#E4DDDD"
         android:text="@string/add_item"
         app:cornerRadius="40dp"
@@ -84,14 +83,15 @@
         android:id="@+id/uploadItemB"
         android:layout_width="121dp"
         android:layout_height="55dp"
+        android:layout_marginTop="184dp"
         android:backgroundTintMode="multiply"
         android:shadowColor="#E4DDDD"
         android:text="upload"
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView5"

@@ -1,15 +1,15 @@
-package com.example.foodhunt
+package com.example.foodhunt.orderdetails
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.foodhunt.Database.DBHelper
-import com.example.foodhunt.Database.DBWrapper
+import com.example.foodhunt.R
+import com.example.foodhunt.database.DBWrapper
+import com.example.foodhunt.paymentdetails.PaymentActivity
 
 data class Order(val itemName : String? = null, val itemPrice :String? = null, val itemCount : String? = null)
 
@@ -65,7 +65,7 @@ class OrderSummaryActivity : AppCompatActivity() {
         val rowid = wrapper.addOrder(order)
         if (rowid.toInt() != -1) {
             Toast.makeText(this, "Order Details saved", Toast.LENGTH_SHORT).show()
-            val i = Intent(this,PaymentActivity::class.java)
+            val i = Intent(this, PaymentActivity::class.java)
             i.putExtras(b)
             startActivity(i)
         } else

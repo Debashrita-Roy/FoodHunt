@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.orderdetails
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import com.example.foodhunt.Database.DBWrapper
+import com.example.foodhunt.database.DBWrapper
+import com.example.foodhunt.paymentdetails.PaymentActivity
+import com.example.foodhunt.R
 
 class EditOrderActivity : AppCompatActivity() {
 
@@ -49,7 +51,7 @@ class EditOrderActivity : AppCompatActivity() {
         amountTextView.setText(amount.toString())
     }
 
-    fun confirmClick(view: View) {
+    fun confirmEditClick(view: View) {
         val i = Intent(this, PaymentActivity::class.java)
         startActivity(i)
     }
