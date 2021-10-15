@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.hoteldata
 
 data class Hotel(
     val registerId: Int = 0,

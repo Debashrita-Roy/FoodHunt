@@ -1,20 +1,18 @@
-package com.example.foodhunt
+package com.example.foodhunt.itemdata
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import android.widget.Toast.makeText
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.foodhunt.hoteldata.Item
+import com.example.foodhunt.R
 
 class ItemAdapter(private var itemName: MutableList<Item>,
-                  private val itemClickListener: ItemClickListener)
+                  private val itemClickListener: ItemClickListener
+)
     : RecyclerView.Adapter<ItemAdapter.ItemHolder>()  {
 
  inner class ItemHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -28,7 +26,7 @@ class ItemAdapter(private var itemName: MutableList<Item>,
 
 
  }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAdapter.ItemHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.all_items_in_hotel_list,parent,false)
         return ItemHolder(view)
     }

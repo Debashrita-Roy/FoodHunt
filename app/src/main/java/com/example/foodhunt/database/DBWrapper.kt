@@ -1,10 +1,10 @@
-package com.example.foodhunt.Database
+package com.example.foodhunt.database
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.example.foodhunt.Order
+import com.example.foodhunt.orderdetails.Order
 import com.example.foodhunt.Users
 
 class DBWrapper (val context: Context){
@@ -56,7 +56,7 @@ class DBWrapper (val context: Context){
         rowData.put(DBHelper2.CLM_ITEM_COUNT,order.itemCount)
         val args = arrayOf("${order.itemName}")
 
-        return db.update(DBHelper.TABLE_ORDER_NAME, rowData, "${DBHelper2.CLM_ITEM_NAME} = ?", args)
+        return db.update(DBHelper2.TABLE_ORDER_NAME, rowData, "${DBHelper2.CLM_ITEM_NAME} = ?", args)
     }
 
 }

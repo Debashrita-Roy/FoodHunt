@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.paymentdetails
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.example.foodhunt.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,8 +28,6 @@ class CardPay : Fragment() {
     lateinit var cardnameEditText: EditText
     lateinit var cvvEditText: EditText
     lateinit var orderButton:Button
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,13 +49,10 @@ class CardPay : Fragment() {
         cvvEditText=view.findViewById(R.id.cvvE)
         orderButton=view.findViewById(R.id.porderB)
 
-
         orderButton.setOnClickListener{
-            placeOrder()
+            placeOrderClick()
         }
-
     }
-
     fun placeOrder() {
         val frag= CashOnDelivery()
         childFragmentManager.beginTransaction().replace(R.id.ConstraintLayout2,frag).commit()
@@ -81,14 +77,9 @@ class CardPay : Fragment() {
 
                 else -> {
                     Toast.makeText(activity, "Payment Successful", Toast.LENGTH_SHORT).show()
-
+                    placeOrder()
                 }
-
             }
-
         }
-
-
     }
-
 }

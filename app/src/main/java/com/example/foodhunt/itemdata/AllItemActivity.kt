@@ -1,21 +1,23 @@
-package com.example.foodhunt
+package com.example.foodhunt.itemdata
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.foodhunt.*
+import com.example.foodhunt.database.db
+import com.example.foodhunt.hoteldata.Hotel
+import com.example.foodhunt.hoteldata.Item
+import com.example.foodhunt.orderdetails.OrderSummaryActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_all_item.*
 
-class AllItemActivity : AppCompatActivity(),ItemClickListener {
+class AllItemActivity : AppCompatActivity(), ItemClickListener {
 
     lateinit var itemRView: RecyclerView
     var itemList = mutableListOf<Item>()
@@ -26,11 +28,7 @@ class AllItemActivity : AppCompatActivity(),ItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_item)
         supportActionBar?.hide()
-//        orderFoodButton = findViewById(R.id.orderFoodB)
-//        orderFoodButton.setOnClickListener {
-//            Toast.makeText(this, "button Clicked", Toast.LENGTH_SHORT).show()
-//
-//        }
+
         itemRView = findViewById(R.id.itemRecV)
         itemRView.setHasFixedSize(true)
         itemRView.layoutManager = LinearLayoutManager(this)

@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.paymentdetails
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.core.view.isVisible
+import com.example.foodhunt.DisplayItemActivity
 import com.example.foodhunt.R
 import kotlinx.android.synthetic.main.fragment_cash_on_delivery.*
 
@@ -51,13 +51,6 @@ class CashOnDelivery : Fragment() {
         }
 
     }
-
-    /*fun placeOrder() {
-        val frag= CashOnDelivery()
-        childFragmentManager.beginTransaction().replace(R.id.ConstraintLayout2,frag).commit()
-        backButton.isVisible=false
-
-    }*/
 
     fun placeOrder(){
         val intent = Intent(activity, DisplayItemActivity::class.java)

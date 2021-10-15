@@ -28,10 +28,10 @@
             android:name=".FoodHuntGold"
             android:exported="true" />
         <activity
-            android:name=".EditOrderActivity"
+            android:name=".orderdetails.EditOrderActivity"
             android:exported="true" />
         <activity
-            android:name=".PaymentActivity"
+            android:name=".paymentdetails.PaymentActivity"
             android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -52,25 +52,23 @@
             android:name=".ShowNearbyHotelMap"
             android:exported="true" />
         <activity
-            android:name=".OrderSummaryActivity"
+            android:name=".orderdetails.OrderSummaryActivity"
             android:exported="true" />
         <activity
-            android:name=".AllItemActivity"
+            android:name=".itemdata.AllItemActivity"
             android:exported="true" />
         <activity
-            android:name=".AddItemActivity"
+            android:name=".itemdata.AddItemActivity"
             android:exported="true" />
         <activity
-            android:name=".AllHotelActivity"
+            android:name=".hoteldata.AllHotelActivity"
             android:exported="true" />
-        <activity
-            android:name=".DisplayItemActivity"
-            android:exported="true" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".authentication.SignInActivity"
             android:exported="true" />
         <activity
             android:name=".SplashActivity"
@@ -82,7 +80,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HotelFirebaseDB"
+            android:name=".hoteldata.HotelFirebaseDB"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

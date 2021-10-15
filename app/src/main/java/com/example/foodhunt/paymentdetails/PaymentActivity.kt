@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.paymentdetails
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
+import com.example.foodhunt.DisplayItemActivity
+import com.example.foodhunt.orderdetails.EditOrderActivity
+import com.example.foodhunt.R
 
 class PaymentActivity : AppCompatActivity() {
 
@@ -57,12 +60,12 @@ class PaymentActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.parentL,cardFrag).commit()
             }
 
-            R.id.upiB->{
+            R.id.upiB ->{
                 val upiFrag= UPI()
                 supportFragmentManager.beginTransaction().replace(R.id.parentL,upiFrag).commit()
             }
 
-            R.id.editB->{
+            R.id.editB ->{
                 //
                 val g = intent.extras
                 val iname = g?.getString("iname")
@@ -74,13 +77,18 @@ class PaymentActivity : AppCompatActivity() {
                 b.putString("iprice", iprice)
                 b.putInt("icount", icount!!)
 
-                val i = Intent(this,EditOrderActivity::class.java)
+                val i = Intent(this, EditOrderActivity::class.java)
                 i.putExtras(b)
                 startActivity(i)
                 //
 
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, DisplayItemActivity::class.java))
     }
 
 }

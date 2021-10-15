@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.foodhunt.Database.DBWrapper
+import com.example.foodhunt.authentication.SignInActivity
+import com.example.foodhunt.database.DBHelper
+import com.example.foodhunt.database.DBWrapper
 
 data class Users(var userid:String, var email: String, var password: String, val address: String )
 
@@ -52,18 +54,44 @@ class RegisterActivity : AppCompatActivity() {
                 address.isEmpty() -> addressEditText.setError("Please enter address for delivery")
 
                 else -> {
+
                     Toast.makeText(this, "$userid Welcome to Login page", Toast.LENGTH_SHORT).show()
                     val use = Users(userid, email, password, address)
 
                     //add to database
                     val wrapper = DBWrapper(this)
-                    val rowid = wrapper.addUser(use)
-                    if (rowid.toInt() != -1) {
-                        val i = Intent(this, SignInActivity::class.java)
-                        startActivity(i)
-                    } else
-                        Toast.makeText(this, "Error saving details..", Toast.LENGTH_SHORT).show()
-
+                    val resultC = wrapper.getUser()
+                    if (resultC.count > 0) {
+                        resultC.moveToFirst()
+                        val id = resultC.getColumnIndex(DBHelper.CLM_USER_ID)
+                        do {
+                            val idString = resultC.getString(id)
+                            if (userid == idString) {
+                                Toast.makeText(
+                                    this,
+                                    "Username already taken! Try another",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            } else {
+                                val rowid = wrapper.addUser(use)
+                                if (rowid.toInt() != -1) {
+                                    val i = Intent(this, SignInActivity::class.java)
+                                    startActivity(i)
+                                } else
+                                    Toast.makeText(
+                                        this,
+                                        "Error saving details..",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                            }
+                        } while (resultC.moveToNext())
+                    } else {
+                        val rowid = wrapper.addUser(use)
+                        if (rowid.toInt() != -1) {
+                            val i = Intent(this, SignInActivity::class.java)
+                            startActivity(i)
+                        }
+                    }
                 }
             }
         }

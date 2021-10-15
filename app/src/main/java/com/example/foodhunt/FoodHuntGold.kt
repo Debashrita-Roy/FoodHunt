@@ -7,19 +7,19 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 
-class foodhuntgold : AppCompatActivity() {
+class FoodHuntGold: AppCompatActivity() {
 
     lateinit var claimButton:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_hunt_gold)
-
+        supportActionBar?.hide()
         claimButton=findViewById(R.id.claimB)
     }
 
     fun claimClick(view: View) {
-        Toast.makeText(this,"Congradulations!!! You claimed your offer",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Congratulations!!! You claimed your offer",Toast.LENGTH_LONG).show()
     }
 
 }

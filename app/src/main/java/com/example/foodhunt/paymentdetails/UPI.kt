@@ -1,4 +1,4 @@
-package com.example.foodhunt
+package com.example.foodhunt.paymentdetails
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.example.foodhunt.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,4 +70,5 @@ class UPI : Fragment() {
             childFragmentManager.beginTransaction().replace(R.id.frameLayout2,frag).commit()
             orderButton.isVisible=false
     }
+
 }
