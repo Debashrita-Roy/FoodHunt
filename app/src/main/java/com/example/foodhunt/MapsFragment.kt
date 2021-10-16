@@ -52,27 +52,11 @@ class MapsFragment : Fragment() {
         val long = bundle?.getDouble("longitude")
         Log.d("MapsFragment", "lat : $lat, long : $long")
 
-        val cafe1Loc = LatLng(19.2180, 73.1221)
-        val cafe1 = googleMap.addMarker(MarkerOptions().position(cafe1Loc).title("Darbar"))
-
-        googleMap.setOnInfoWindowClickListener() {
-            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_SHORT).show()
-        }
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(cafe1Loc))
 
 
-        val res2Loc = LatLng(19.2094, 73.0939)
-        val res2 = googleMap.addMarker(
-            MarkerOptions().position(res2Loc).title("Zayka")
-                .snippet("This is a comfortable and cozy place")
-        )
-        googleMap.setOnInfoWindowClickListener() {
-            Toast.makeText(activity, "Clicked on ${it.title}", Toast.LENGTH_SHORT).show()
-        }
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(res2Loc))
 
+//////////////////////////////////////// Code to display all Hotels /////////////////////////////////////////
 
-//////////////////////////////////////// All Hotels /////////////////////////////////////////
 //        db = FirebaseDatabase.getInstance()
 //        val hotRef = db.getReference("Hotels").child("Hotel Name")
 //
@@ -106,6 +90,8 @@ class MapsFragment : Fragment() {
 //
 //    }
 
+
+//////////////////////////////////////// Code to display nearby Hotels /////////////////////////////////////////
         db = FirebaseDatabase.getInstance()
         val hotRef = db.getReference("Hotels").child("Hotel Name")
 
