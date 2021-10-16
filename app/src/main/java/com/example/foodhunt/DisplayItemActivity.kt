@@ -135,9 +135,6 @@ class DisplayItemActivity : AppCompatActivity() {
         })
     }
 
-    override fun onBackPressed() {
-      val i = Intent(this, SignInActivity::class.java)
-    }
 
 
 

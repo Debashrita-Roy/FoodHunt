@@ -50,7 +50,7 @@ class HotelFirebaseDB : AppCompatActivity(), View.OnClickListener {
         longEditText = findViewById(R.id.longE)
 
         hotelImage = findViewById(R.id.hotelIV)
-       uploadButton = findViewById(R.id.uploadB)
+        uploadButton = findViewById(R.id.uploadB)
 
 //        addCreateFirebase()
         db = FirebaseDatabase.getInstance()

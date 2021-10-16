@@ -43,7 +43,6 @@ class SignInActivity : AppCompatActivity() {
 
         val userid = uidEditText.text.toString()
         val password = pwdEditText.text.toString()
-        val checked: Boolean = rememberC.isChecked
         //addPredefinedHotels()
         //addCreateFirebase()
 
@@ -82,7 +81,6 @@ class SignInActivity : AppCompatActivity() {
                                     getSharedPreferences("Credentials", MODE_PRIVATE).edit()
                                 userDetails.putString("USERNAME", userid)
                                 userDetails.putString("PASSWORD", password)
-                                userDetails.putBoolean("CHECKBOX", checked)
                                 userDetails.commit()
 
                                 val i = Intent(this, DisplayItemActivity::class.java)

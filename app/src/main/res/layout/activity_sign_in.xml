@@ -92,7 +92,9 @@
         android:text="Forgot password?"
         android:textColor="#3949AB"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/pwdE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pwdE" />
 
     <Button
@@ -121,18 +123,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
-
-    <CheckBox
-        android:id="@+id/rememberC"
-        android:layout_width="125dp"
-        android:layout_height="21dp"
-        android:text="Remember me"
-        android:textColor="#3949AB"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/forgetPwdT"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwdE" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,9 +5,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="we_saved_you_seat_">_____We have saved you a seat !_____</string>
+    <string name="we_saved_you_seat_">We have saved you a seat</string>
     <string name="main_sign_in">Sign In</string>
-    <string name="main_register">Register</string>
+    <string name="main_register">Register as User</string>
+    <string name="main_register_admin">Register as Admin</string>
     <string name="hotel_name">Hotel Name</string>
     <string name="description">Description</string>
     <string name="address">Address</string>
